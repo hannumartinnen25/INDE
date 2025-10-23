@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVINCEP — The Autonomy OS for the Real World</title>
+    <meta name="description" content="NOVINCEP builds a modular, resilient Autonomy OS for robotic systems operating under real-world constraints.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #FFFFFF;
+            --accent: #1F6FEB;
+            --gray: #808080;
+            --light-gray: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--primary);
+            color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+            opacity: 0.8;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .cta-nav {
+            background: var(--accent);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            color: var(--secondary) !important;
+            opacity: 1 !important;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(31, 111, 235, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 8rem 2rem 4rem;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(31, 111, 235, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(31, 111, 235, 0.05) 0%, transparent 50%);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            letter-spacing: -2px;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            opacity: 0;
+            animation: slideUp 1s 0.3s forwards;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            animation: slideUp 1s 0.6s forwards;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 1s 0.9s forwards;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--secondary);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(31, 111, 235, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--secondary);
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+
+        .social-proof {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 1s 1.2s forwards;
+        }
+
+        .proof-item {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Section Container */
+        .section {
+            padding: 6rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Value Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.4s;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .value-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(31, 111, 235, 0.2);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Principles Section */
+        .principles {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 6rem 2rem;
+        }
+
+        .principles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .principle-card {
+            padding: 2rem;
+            border-left: 3px solid var(--accent);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .principle-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        /* CTA Band */
+        .cta-band {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, rgba(31, 111, 235, 0.1) 0%, transparent 100%);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cta-band h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 2rem;
+        }
+
+        /* Platforms */
+        .platform-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-item {
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .platform-item:hover {
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .platform-tag {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            padding: 4rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            transition: right 0.4s ease;
+            padding: 2rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu-close {
+            background: none;
+            border: none;
+            color: var(--secondary);
+            font-size: 2rem;
+            cursor: pointer;
+            float: right;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .mobile-menu-links {
+            list-style: none;
+            margin-top: 4rem;
+        }
+
+        .mobile-menu-links li {
+            margin-bottom: 2rem;
+        }
+
+        .mobile-menu-links a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .mobile-menu-links a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1999;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
+            }
+
+            .value-grid,
+            .platform-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-left: 2px solid var(--secondary);
+            border-bottom: 2px solid var(--secondary);
+            transform: rotate(-45deg);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">NOVINCEP</a>
+            <ul class="nav-links">
+                <li><a href="#os">Autonomy OS</a></li>
+                <li><a href="#platforms">Platforms</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact" class="cta-nav">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Autonomy that survives friction.</h1>
+            <p class="hero-subtitle">NOVINCEP builds the Autonomy OS that keeps robots thinking and acting when everything else stops working.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Request a Briefing</a>
+                <a href="#os" class="btn btn-secondary">Explore the OS</a>
+            </div>
+            <div class="social-proof">
+                <div class="proof-item">✓ Pilots with European robotics partners</div>
+                <div class="proof-item">✓ GPS-denied environments</div>
+                <div class="proof-item">✓ Cross-domain integration</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Built for the real world</h2>
+            <p>Edge-first autonomy that operates where connectivity and certainty don't exist</p>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <div class="value-icon">🛡️</div>
+                <h3>Fail-Operational Behaviors</h3>
+                <p>Graceful degradation ensures mission continuity. When conditions deteriorate, the system adapts instead of failing.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⚡</div>
+                <h3>Edge Autonomy</h3>
+                <p>Local decision-making for instant adaptability. No cloud dependency means no single point of failure.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🔧</div>
+                <h3>Plug-in Architecture</h3>
+                <p>Extend, replace, or integrate modules seamlessly. Build once, deploy everywhere.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principles -->
+    <section class="principles" id="technology">
+        <div class="section-header">
+            <h2>Core Principles</h2>
+            <p>Engineering philosophy that drives every decision</p>
+        </div>
+        <div class="principles-grid">
+            <div class="principle-card">
+                <h3>Reliability First</h3>
+                <p>Autonomy doesn't start with intelligence. It starts with trust. Our system prioritizes deterministic behavior before any AI is introduced.</p>
+            </div>
+            <div class="principle-card">
+                <h3>Modular by Design</h3>
+                <p>Swap, upgrade, or isolate any subsystem — perception, planning, control — without rewriting the entire codebase.</p>
+            </div>
+            <div class="principle-card">
+                <h3>Edge-First Execution</h3>
+                <p>NOVINCEP runs locally, not in the cloud. When connectivity drops, your system doesn't.</p>
+            </div>
+            <div class="principle-card">
+                <h3>Continuous Adaptation</h3>
+                <p>The OS learns the environment, recalibrates, and recovers — seamlessly, without human intervention.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Autonomy OS -->
+    <section class="section" id="os">
+        <div class="section-header">
+            <h2>The NOVINCEP Autonomy OS</h2>
+            <p>A modular, edge-first autonomy layer built for mission-critical environments — reliable, adaptable, and hardware-agnostic.</p>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>Perception</h3>
+                <p>Fuses visual, depth, radar, and inertial data into robust spatial understanding. Designed to handle uncertainty, distortion, and partial sensor failure.</p>
+            </div>
+            <div class="value-card">
+                <h3>Decision</h3>
+                <p>Context-driven reasoning and behavior trees to plan optimal actions while respecting safety constraints.</p>
+            </div>
+            <div class="value-card">
+                <h3>Control</h3>
+                <p>Real-time feedback ensures smooth, stable movement and adaptive handling of environmental changes.</p>
+            </div>
+            <div class="value-card">
+                <h3>Behaviors</h3>
+                <p>Intelligence layer that decides when to adapt, when to stop, and when to call for human attention.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms -->
+    <section class="section" id="platforms">
+        <div class="section-header">
+            <h2>One OS. Many platforms.</h2>
+            <p>Ground, maritime, hybrid — deploy with minimal integration friction.</p>
+        </div>
+        <div class="platform-list">
+            <div class="platform-item">
+                <div class="platform-tag">UGV</div>
+                <h3>Unmanned Ground Vehicles</h3>
+                <p>Differential and tracked vehicles; outdoor logistics; semi-structured terrain. Built for industrial inspection, last-mile logistics, and smart agriculture.</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-tag">USV</div>
+                <h3>Unmanned Surface Vessels</h3>
+                <p>Inland and coastal vessels; variable currents and cluttered channels. Environmental monitoring, surveying, and port automation.</p>
+            </div>
+            <div class="platform-item">
+                <div class="platform-tag">Custom</div>
+                <h3>Custom Integrations</h3>
+                <p>For robotics OEMs and R&D labs building unique systems. Flexible adapters for sensors, compute, and mobility bases.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+        <h2>From demos to deployment.</h2>
+        <p style="color: var(--gray); margin-bottom: 2rem; font-size: 1.2rem;">Build autonomy that survives reality.</p>
+        <a href="#contact" class="btn btn-primary">Talk to Our Team</a>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="section-header">
+            <h2>Autonomy that respects reality</h2>
+            <p>NOVINCEP was founded with a single conviction: autonomy must work outside the lab. We build systems that don't just operate — they understand context, handle uncertainty, and recover from failure.</p>
+        </div>
+        <div class="value-grid">
+            <div class="value-card">
+                <h3>Reality-first engineering</h3>
+                <p>Every decision tested against real-world constraints</p>
+            </div>
+            <div class="value-card">
+                <h3>Modular over monolithic</h3>
+                <p>Composable systems that adapt to your needs</p>
+            </div>
+            <div class="value-card">
+                <h3>Transparency over magic</h3>
+                <p>Understandable, debuggable, reliable autonomy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <div class="section-header">
+            <h2>Let's build real-world autonomy together</h2>
+            <p>Tell us about your platform, use case, or challenge</p>
+        </div>
+        <div style="max-width: 600px; margin: 0 auto;">
+            <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <        input type="text" placeholder="Name" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; font-size: 1rem; transition: all 0.3s;">
+                <input type="email" placeholder="Email" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; font-size: 1rem; transition: all 0.3s;">
+                <input type="text" placeholder="Company" style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; font-size: 1rem; transition: all 0.3s;">
+
+                <textarea placeholder="Message" rows="5" required style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 4px; font-size: 1rem; resize: vertical; transition: all 0.3s;"></textarea>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+            <div style="margin-top: 3rem; text-align: center; color: var(--gray);">
+                <p><strong>NOVINCEP</strong></p>
+                <p>Tel Aviv, Israel</p>
+                <p><a href="mailto:info@novincep.com" style="color: var(--accent); text-decoration: none;">info@novincep.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#os">Autonomy OS</a>
+                <a href="#platforms">Platforms</a>
+                <a href="#technology">Technology</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 NOVINCEP — The Autonomy OS for the Real World</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thanks for reaching out! Our team will reply soon.');
+            this.reset();
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.value-card, .principle-card, .platform-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
