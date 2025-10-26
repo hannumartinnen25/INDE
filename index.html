@@ -18,7 +18,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -28,18 +28,25 @@
         }
 
         :root {
-            --bg-white: #FFFFFF;
-            --primary-blue: #2E7CF6;
-            --accent-orange: #FF6A00;
-            --text-dark: #1A1A1A;
-            --muted-gray: #F2F4F8;
+            --ginger: #FF4C00;        /* Ginger Spark */
+            --graphite: #0F0F0F;      /* Dark Graphite */
+            --steel: #3B3B3B;         /* Steel Grey */
+            --cloud: #F8F8F8;         /* Cloud White */
+            --ash: #E6E6E6;           /* Ash Grey */
+            --signal: #007AFF;        /* Signal Blue */
+            
+            --bg-white: var(--cloud);
+            --primary-blue: var(--signal);
+            --accent-orange: var(--ginger);
+            --text-dark: var(--graphite);
+            --muted-gray: #F5F6F7;
             --text-gray: #6B7280;
-            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #0A0A0A 100%);
-            --gradient-blue-orange: linear-gradient(135deg, #2E7CF6 0%, #FF6A00 100%);
+            --gradient-dark: linear-gradient(135deg, #0F0F0F 0%, #0A0A0A 100%);
+            --gradient-blue-orange: linear-gradient(135deg, #007AFF 0%, #FF4C00 100%);
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
-            --shadow-glow: 0 0 30px rgba(255, 106, 0, 0.3);
+            --shadow-glow: 0 0 30px rgba(255, 76, 0, 0.3);
         }
 
         html {
@@ -48,10 +55,42 @@
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: var(--bg-white);
-            color: var(--text-dark);
+            background: var(--cloud);
+            color: var(--graphite);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+        }
+        
+        code, pre, .mono {
+            font-family: 'JetBrains Mono', 'ui-monospace', monospace;
+        }
+        
+        /* Skip to Content - Accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--ginger);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 100000;
+            border-radius: 0 0 8px 0;
+            transition: top 0.3s ease;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+            outline: 3px solid var(--signal);
+            outline-offset: 2px;
         }
 
         /* Loading Screen */
@@ -286,10 +325,10 @@
         }
 
         .btn {
-            padding: 0.7rem 1.75rem;
+            padding: 1rem 2.5rem;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1.0625rem;
             cursor: pointer;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
@@ -298,6 +337,11 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            min-width: 140px;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .btn::before {
@@ -337,14 +381,15 @@
         }
 
         .btn-primary {
-            background: var(--accent-orange);
+            background: var(--ginger);
             color: white;
-            box-shadow: 0 4px 14px rgba(255, 106, 0, 0.4);
+            box-shadow: 0 6px 18px rgba(255, 76, 0, 0.35);
+            font-weight: 700;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #FF6A00, #FF8534);
-            box-shadow: 0 8px 30px rgba(255, 106, 0, 0.5);
+            background: linear-gradient(135deg, #FF4C00, #FF6A1A);
+            box-shadow: 0 10px 30px rgba(255, 76, 0, 0.5);
             transform: translateY(-3px);
         }
 
@@ -354,13 +399,15 @@
 
         .btn-secondary {
             background: white;
-            color: var(--accent-orange);
-            border: 2px solid var(--accent-orange);
+            color: var(--ginger);
+            border: 2px solid var(--ginger);
+            font-weight: 600;
         }
 
         .btn-secondary:hover {
-            background: var(--accent-orange);
-            color: white;
+            background: #FFF2EC;
+            color: var(--ginger);
+            border-color: var(--ginger);
         }
 
         .btn-outline {
@@ -488,13 +535,14 @@
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
             animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.7s both;
         }
 
         .helper-text {
-            font-size: 0.9rem;
-            color: var(--text-gray);
+            font-size: 0.875rem;
+            color: #5A6169;
             font-style: italic;
             animation: slideInLeft 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.9s both;
         }
@@ -1066,26 +1114,68 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-
-        .footer-newsletter input {
-            width: 100%;
+        
+        /* Coming Soon Badge */
+        .coming-soon {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(255, 76, 0, 0.2);
+            color: var(--ginger);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(255, 76, 0, 0.3);
+        }
+        
+        /* Newsletter Form */
+        .newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
             padding: 0.85rem 1.25rem;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50px;
             color: white;
-            margin-top: 0.75rem;
             transition: all 0.3s ease;
         }
-
-        .footer-newsletter input:focus {
+        
+        .newsletter-form input:focus {
             outline: none;
-            border-color: var(--accent-orange);
+            border-color: var(--ginger);
             background: rgba(255, 255, 255, 0.08);
         }
-
-        .footer-newsletter input::placeholder {
+        
+        .newsletter-btn {
+            padding: 0.85rem 1.5rem;
+            background: var(--ginger);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .newsletter-btn:hover {
+            background: linear-gradient(135deg, #FF4C00, #FF6A1A);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 76, 0, 0.4);
+        }
+        
+        .newsletter-note {
+            font-size: 0.75rem;
             color: rgba(255, 255, 255, 0.5);
+            margin-top: 0.5rem;
+            font-style: italic;
         }
 
         .footer-bottom {
@@ -1195,6 +1285,16 @@
                 padding: 3rem 1.5rem;
                 text-align: center;
             }
+            
+            .hero-actions {
+                justify-content: center;
+                gap: 0.75rem;
+            }
+            
+            .hero-actions .btn {
+                width: 100%;
+                max-width: 300px;
+            }
 
             .hero-content h1 {
                 font-size: 2.75rem;
@@ -1246,8 +1346,25 @@
             animation: fadeIn 0.8s ease forwards;
         }
     </style>
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "INDE Robotics",
+      "url": "https://inde-robotics.com",
+      "logo": "https://inde-robotics.com/inde-logo.png",
+      "description": "INDE builds the Autonomy OS that adapts, learns, and survives — enabling unmanned systems to operate beyond the lab across ground, air, and maritime domains.",
+      "foundingDate": "2024",
+      "sameAs": []
+    }
+    </script>
 </head>
 <body>
+    <!-- Skip to Content for Accessibility -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+    
     <!-- Loading Screen -->
     <div id="loading-screen">
         <div class="loader-content">
@@ -1285,15 +1402,15 @@
     </nav>
 
     <!-- Hero Section - Cinematic -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="hero-content">
-            <h1>Autonomy That <span class="highlight">Thrives</span> When the World Breaks Pattern.</h1>
-            <p class="subheadline">INDE builds the Autonomy OS that adapts, learns, and survives — enabling unmanned systems to operate beyond the lab, across ground, air, and maritime domains.</p>
+            <h1>Autonomy that <span class="highlight">doesn't break</span> when reality does.</h1>
+            <p class="subheadline">INDE is the Autonomy OS for unmanned systems operating in contested, GPS-denied and comms-degraded environments — ground, air, and maritime.</p>
             <div class="hero-actions">
-                <button class="btn btn-primary" onclick="alert('Request submitted!')">Request Early Access</button>
-                <button class="btn btn-secondary">Watch Field Demo</button>
+                <button class="btn btn-primary" data-cta="demo" id="hero-demo-btn">Get a Demo</button>
+                <button class="btn btn-secondary" data-cta="watch-demo" id="hero-video-btn">Watch Field Demo</button>
             </div>
-            <p class="helper-text">Dual-use by design. Field-tested for resilience.</p>
+            <p class="helper-text">Defense-grade by intent. Dual-use by design.</p>
         </div>
         <div class="hero-illustration">
             <svg class="illustration-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1444,22 +1561,22 @@
             <div class="stack-card">
                 <div class="stack-icon">👁️</div>
                 <h3>Perception Engine</h3>
-                <p>Sensor fusion for 3D awareness in dynamic environments. Real-time obstacle detection and terrain analysis.</p>
+                <p>Multi-sensor fusion for 3D awareness in contested, dynamic environments. Terrain classification, obstacle tracking, weather robustness.</p>
             </div>
             <div class="stack-card">
                 <div class="stack-icon">🧠</div>
                 <h3>Decision Core</h3>
-                <p>Real-time goal optimization and policy control. Adaptive decision-making under uncertainty.</p>
+                <p>Goal-driven policies with risk management and graceful degradation when inputs fail. Adapts under pressure.</p>
             </div>
             <div class="stack-card">
                 <div class="stack-icon">🔌</div>
                 <h3>Control Bridge</h3>
-                <p>Modular interface for UGVs, UAVs, and hybrid systems. Vehicle-agnostic integration layer.</p>
+                <p>Vehicle-agnostic interface for UGVs, UAVs, USVs, and hybrid platforms. Failsafes and redundancy built-in.</p>
             </div>
             <div class="stack-card">
                 <div class="stack-icon">📊</div>
                 <h3>Ops Console</h3>
-                <p>Fleet management, telemetry, and OTA updates. Mission-critical operational oversight.</p>
+                <p>Fleet monitoring, telemetry, OTA updates, and mission orchestration. Audit trails and mission replay.</p>
             </div>
         </div>
         <div class="stack-cta">
@@ -1478,22 +1595,22 @@
                 <div class="use-case-card">
                     <div class="use-case-icon">🚙</div>
                     <h4>Ground Robotics</h4>
-                    <p>Convoy logistics, tactical mobility, and autonomous patrol operations in complex terrain.</p>
+                    <p>Convoy autonomy, route clearance, perimeter patrol. GPS-denied navigation and obstacle avoidance in complex terrain.</p>
                 </div>
                 <div class="use-case-card">
                     <div class="use-case-icon">🚁</div>
                     <h4>Aerial Systems</h4>
-                    <p>ISR, mapping, and reconnaissance missions with GPS-denied resilience.</p>
+                    <p>ISR, mapping, recon with denied-GPS recovery. Adaptive flight policies and resilient failsafes.</p>
                 </div>
                 <div class="use-case-card">
                     <div class="use-case-icon">⛵</div>
                     <h4>Maritime & Amphibious</h4>
-                    <p>Port security, environmental monitoring, and all-weather maritime operations.</p>
+                    <p>Port security, littoral ops, all-weather maritime operations. Sensor fusion in harsh conditions.</p>
                 </div>
                 <div class="use-case-card">
                     <div class="use-case-icon">🏭</div>
                     <h4>Industrial Operations</h4>
-                    <p>Autonomous logistics, safety inspection, and warehouse automation at scale.</p>
+                    <p>Logistics autonomy, critical site safety overlays. Warehouse automation with mission-grade reliability.</p>
                 </div>
             </div>
             <p class="use-case-tagline">Dual-use by design: defense-grade reliability without vendor lock-in</p>
@@ -1594,39 +1711,43 @@
                     <div class="footer-logo">
                         <img src="inde-logo.png" alt="INDE" title="David was a redhead. So is our autonomy. 😏">
                     </div>
-                    <p class="footer-tagline">Autonomy for the Real World</p>
+                    <p class="footer-tagline">Defense-grade autonomy • Dual-use by design • Vendor-agnostic</p>
                 </div>
                 <div class="footer-column">
                     <h4>Platform</h4>
                     <ul>
-                        <li><a href="#">Perception Engine</a></li>
-                        <li><a href="#">Decision Core</a></li>
-                        <li><a href="#">Control Bridge</a></li>
-                        <li><a href="#">Ops Console</a></li>
+                        <li><a href="#stack">Perception Engine <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#stack">Decision Core <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#stack">Control Bridge <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#stack">Ops Console <span class="coming-soon">Soon</span></a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Solutions</h4>
                     <ul>
-                        <li><a href="#">Ground Robotics</a></li>
-                        <li><a href="#">Aerial Systems</a></li>
-                        <li><a href="#">Maritime Operations</a></li>
-                        <li><a href="#">Industrial</a></li>
+                        <li><a href="#solutions">Ground Robotics</a></li>
+                        <li><a href="#solutions">Aerial Systems</a></li>
+                        <li><a href="#solutions">Maritime Operations</a></li>
+                        <li><a href="#solutions">Industrial</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Field Stories</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#platform">Documentation <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#platform">API Reference <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#field-stories">Field Stories</a></li>
+                        <li><a href="#company">Blog <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#company">Support <span class="coming-soon">Soon</span></a></li>
                     </ul>
                 </div>
                 <div class="footer-column footer-newsletter">
                     <h4>Stay Updated</h4>
-                    <input type="email" placeholder="Stay updated on the future of autonomy">
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">Low-noise updates. Mission over marketing.</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1992,5 +2113,390 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
     </style>
+    <!-- Demo Request Modal -->
+    <div id="demoModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('demoModal')" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <h2>Request a Demo</h2>
+                <p>Tell us about your mission and we'll show you how INDE adapts to your needs.</p>
+                <form id="demoForm" class="modal-form">
+                    <div class="form-group">
+                        <label for="demo-email">Work Email *</label>
+                        <input type="email" id="demo-email" name="email" required placeholder="you@organization.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-org">Organization *</label>
+                        <input type="text" id="demo-org" name="organization" required placeholder="Your organization">
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-domain">Domain of Use *</label>
+                        <select id="demo-domain" name="domain" required>
+                            <option value="">Select domain...</option>
+                            <option value="ugv">Ground Robotics (UGV)</option>
+                            <option value="uav">Aerial Systems (UAV)</option>
+                            <option value="usv">Maritime (USV)</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-timeline">Deployment Timeline</label>
+                        <select id="demo-timeline" name="timeline">
+                            <option value="">Select timeline...</option>
+                            <option value="<3months">< 3 months</option>
+                            <option value="3-6months">3-6 months</option>
+                            <option value=">6months">> 6 months</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="demo-notes">Mission Notes</label>
+                        <textarea id="demo-notes" name="notes" rows="4" maxlength="800" placeholder="Tell us about your use case, environment, and requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Request Demo</button>
+                </form>
+                <div id="demoSuccess" class="form-success">
+                    <div class="success-icon">✓</div>
+                    <h3>Demo Request Received</h3>
+                    <p>Our team will reach out with next steps within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Demo Modal -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content video-modal">
+            <button class="modal-close" onclick="closeModal('videoModal')" aria-label="Close modal">&times;</button>
+            <div class="modal-body">
+                <h2>Field Demo</h2>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div>
+                            <p style="margin-bottom:1rem; font-size:3rem;">🎥</p>
+                            <p style="font-size:1.25rem; font-weight:600; margin-bottom:0.5rem;">Field Demo Video</p>
+                            <p style="font-size:1rem; opacity:0.9;">Our systems in action across ground, air, and maritime domains</p>
+                            <p style="font-size:0.9rem; opacity:0.7; margin-top:1rem;">Video available upon request</p>
+                            <button class="btn btn-primary" onclick="closeModal('videoModal'); openModal('demoModal')" style="margin-top:1.5rem;">Request Live Demo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 24px;
+            padding: 3rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--text-gray);
+            transition: color 0.2s ease, transform 0.2s ease;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            padding: 0;
+        }
+
+        .modal-close:hover {
+            color: var(--ginger);
+            background: var(--muted-gray);
+            transform: rotate(90deg);
+        }
+
+        .modal-body h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+        }
+
+        .modal-body > p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .modal-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-form .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+        }
+
+        .modal-form input,
+        .modal-form select,
+        .modal-form textarea {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            background: white;
+        }
+
+        .modal-form input:focus,
+        .modal-form select:focus,
+        .modal-form textarea:focus {
+            outline: none;
+            border-color: var(--ginger);
+            box-shadow: 0 0 0 4px rgba(255, 76, 0, 0.1);
+        }
+
+        .modal-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .form-success.active {
+            display: block;
+        }
+
+        .form-success .success-icon {
+            font-size: 4rem;
+            color: var(--ginger);
+            margin-bottom: 1rem;
+            animation: successPop 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .form-success h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @keyframes successPop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        /* Video Modal */
+        .video-modal .modal-content {
+            max-width: 900px;
+            padding: 2rem;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--signal), var(--ginger));
+        }
+
+        .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Accessibility - Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                padding: 2rem 1.5rem;
+                max-width: 95%;
+            }
+            
+            .modal-body h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Modal Functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                // Focus trap
+                const focusable = modal.querySelectorAll('button, input, select, textarea');
+                if (focusable.length > 0) {
+                    setTimeout(() => focusable[0].focus(), 100);
+                }
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                // Reset form if it exists
+                const form = modal.querySelector('form');
+                if (form) {
+                    form.reset();
+                    const success = modal.querySelector('.form-success');
+                    if (success) {
+                        success.classList.remove('active');
+                        form.style.display = 'block';
+                    }
+                }
+            }
+        }
+
+        // Close modal on outside click
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                closeModal(e.target.id);
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.active').forEach(modal => {
+                    closeModal(modal.id);
+                });
+            }
+        });
+
+        // Demo Form Handler
+        document.getElementById('demoForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+            
+            // Log for analytics
+            console.log('Demo Request:', data);
+            
+            // Show success message
+            e.target.style.display = 'none';
+            document.getElementById('demoSuccess').classList.add('active');
+            
+            // Close after 3 seconds
+            setTimeout(() => {
+                closeModal('demoModal');
+            }, 3000);
+            
+            // Here you would normally send to your backend
+            // fetch('/api/demo-request', { method: 'POST', body: JSON.stringify(data) })
+        });
+
+        // CTA Button Handlers
+        document.querySelectorAll('[data-cta="demo"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                openModal('demoModal');
+                console.log('event:cta_demo_click');
+            });
+        });
+
+        document.querySelectorAll('[data-cta="watch-demo"]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                openModal('videoModal');
+                console.log('event:hero_watch_demo');
+            });
+        });
+
+        // Newsletter Form Handler
+        const newsletterForm = document.getElementById('newsletterForm');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const email = document.getElementById('newsletter-email').value;
+                
+                // Log for analytics
+                console.log('event:newsletter_signup', email);
+                
+                // Show success message
+                const btn = newsletterForm.querySelector('.newsletter-btn');
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Subscribed!';
+                btn.style.background = '#17C964';
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '';
+                    newsletterForm.reset();
+                }, 2000);
+                
+                // Here you would normally send to your backend
+                // fetch('/api/newsletter', { method: 'POST', body: JSON.stringify({ email }) })
+            });
+        }
+    </script>
+
 </body>
 </html>
