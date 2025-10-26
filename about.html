@@ -12,7 +12,10 @@
     <meta property="og:type" content="website">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="inde-logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="inde-favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="inde-favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="inde-favicon-180.png">
+    <link rel="shortcut icon" href="inde-favicon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,17 +30,26 @@
         }
 
         :root {
-            --ginger: #FF8856;
-            --graphite: #0F0F0F;
-            --steel: #3B3B3B;
-            --cloud: #F8F8F8;
-            --ash: #E6E6E6;
-            --signal: #007AFF;
-            --success: #00D084;
+            /* ערכת צבעים זהה ל-index */
+            --ginger: #FF8856;        /* Ginger Spark - Warmer Orange */
+            --graphite: #0F0F0F;      /* Dark Graphite */
+            --steel: #3B3B3B;         /* Steel Grey */
+            --cloud: #F8F8F8;         /* Cloud White */
+            --ash: #E6E6E6;           /* Ash Grey */
+            --signal: #007AFF;        /* Signal Blue */
             
+            --bg-white: var(--cloud);
+            --primary-blue: var(--signal);
+            --accent-orange: var(--ginger);
+            --text-dark: var(--graphite);
+            --muted-gray: #F5F6F7;
+            --text-gray: #6B7280;
+            --gradient-dark: linear-gradient(135deg, #0F0F0F 0%, #0A0A0A 100%);
+            --gradient-blue-orange: linear-gradient(135deg, #007AFF 0%, #FF4C00 100%);
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
             --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+            --shadow-glow: 0 0 30px rgba(255, 76, 0, 0.3);
         }
 
         html {
@@ -57,6 +69,126 @@
             font-weight: 700;
             line-height: 1.2;
             letter-spacing: -0.01em;
+        }
+
+        /* Skip to Content - Accessibility */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--ginger);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            font-weight: 700;
+            z-index: 100000;
+            border-radius: 0 0 8px 0;
+            transition: top 0.3s ease;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+            outline: 3px solid var(--signal);
+            outline-offset: 2px;
+        }
+
+        /* Cookie Banner - צבעים תואמים */
+        #cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--graphite);
+            color: white;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
+            border-top: 2px solid var(--ginger);
+        }
+
+        #cookie-banner.show {
+            transform: translateY(0);
+        }
+
+        #cookie-banner p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            max-width: 70%;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .cookie-btn {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cookie-accept {
+            background: var(--ginger);
+            color: white;
+        }
+
+        .cookie-accept:hover {
+            background: #FF6A3D;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 136, 86, 0.4);
+        }
+
+        .cookie-settings {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cookie-settings:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: var(--graphite);
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
         }
 
         /* Navigation */
@@ -79,9 +211,28 @@
             align-items: center;
         }
 
-        .logo img {
-            height: 45px;
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            transition: transform 0.3s ease;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .logo:hover svg {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--graphite);
+            letter-spacing: -0.02em;
         }
 
         .nav-menu {
@@ -97,15 +248,79 @@
             font-weight: 600;
             font-size: 0.95rem;
             transition: color 0.2s;
+            position: relative;
         }
 
         .nav-menu a:hover {
             color: var(--ginger);
         }
 
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ginger);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile Navigation */
+        @media (max-width: 968px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 280px;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 6rem 2rem 2rem;
+                gap: 1.5rem;
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.1);
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                opacity: 0;
+                transform: translateX(50px);
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .nav-menu.active li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu.active li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu.active li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu.active li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu.active li:nth-child(5) { transition-delay: 0.3s; }
+
+            .nav-menu a::after {
+                display: none;
+            }
+        }
+
         /* Hero Section */
         .about-hero {
-            background: linear-gradient(135deg, var(--graphite) 0%, #1a1a1a 100%);
+            background: var(--gradient-dark);
             color: white;
             padding: 6rem 2rem 4rem;
             text-align: center;
@@ -133,6 +348,17 @@
             color: var(--ginger);
             font-weight: 600;
             letter-spacing: 0.5px;
+        }
+
+        /* Mobile Hero Adjustments */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero .subtitle {
+                font-size: 1.1rem;
+            }
         }
 
         /* Container */
@@ -185,6 +411,7 @@
         .mission-card .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            display: inline-block;
         }
 
         .mission-card h3 {
@@ -211,7 +438,7 @@
             transform: translateX(-50%);
             width: 3px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--ginger), var(--signal));
+            background: var(--gradient-blue-orange);
         }
 
         .timeline-item {
@@ -239,32 +466,71 @@
 
         .timeline-date {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 0.9rem;
             color: var(--ginger);
-            font-weight: 700;
+            font-weight: 600;
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
-        }
-
-        .timeline-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .timeline-content p {
-            color: var(--steel);
-            line-height: 1.6;
         }
 
         .timeline-marker {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             background: var(--ginger);
             border: 4px solid white;
             border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(255, 136, 86, 0.2);
+            box-shadow: 0 0 0 3px var(--signal);
+            z-index: 2;
+        }
+
+        /* Mobile Timeline */
+        @media (max-width: 968px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 60px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-left: 0 !important;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+        }
+
+        /* Stats Section - צבעים תואמים */
+        .stats {
+            background: var(--gradient-blue-orange);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .stat-item .number {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item .label {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
         }
 
         /* Team Section */
@@ -276,11 +542,11 @@
         }
 
         .team-member {
-            text-align: center;
-            padding: 2rem;
             background: white;
+            padding: 2.5rem;
             border-radius: 16px;
             box-shadow: var(--shadow-md);
+            text-align: center;
             transition: all 0.3s ease;
         }
 
@@ -289,121 +555,225 @@
             box-shadow: var(--shadow-lg);
         }
 
-        .team-member .avatar {
-            width: 140px;
-            height: 140px;
+        .avatar {
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--ginger), var(--signal));
-            margin: 0 auto 1.5rem;
+            background: var(--gradient-blue-orange);
+            color: white;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
-            color: white;
-            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
         }
 
         .team-member h3 {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
+            color: var(--graphite);
         }
 
         .team-member .role {
             color: var(--ginger);
             font-weight: 600;
-            font-size: 0.95rem;
             margin-bottom: 1rem;
+            font-size: 0.95rem;
         }
 
         .team-member .bio {
             color: var(--steel);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .team-member .linkedin {
             display: inline-block;
-            margin-top: 1rem;
             color: var(--signal);
             text-decoration: none;
             font-weight: 600;
-            transition: color 0.2s;
+            transition: all 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: rgba(0, 122, 255, 0.1);
         }
 
         .team-member .linkedin:hover {
-            color: var(--ginger);
+            background: rgba(0, 122, 255, 0.2);
+            transform: translateX(5px);
         }
 
-        /* Why Trust Us */
+        /* Mobile Team Grid */
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Trust Section */
         .trust-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
             margin-top: 3rem;
         }
 
         .trust-item {
             text-align: center;
             padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            border: 2px solid var(--ash);
-            transition: all 0.3s ease;
-        }
-
-        .trust-item:hover {
-            border-color: var(--ginger);
-            transform: translateY(-3px);
         }
 
         .trust-item .icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+            display: inline-block;
         }
 
         .trust-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--graphite);
         }
 
         .trust-item p {
             color: var(--steel);
-            font-size: 0.9rem;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        /* Stats */
-        .stats {
-            background: linear-gradient(135deg, var(--graphite), #1a1a1a);
+        /* Contact Form Section - צבעים תואמים */
+        .contact-section {
+            background: var(--gradient-dark);
             color: white;
-            padding: 4rem 0;
+            padding: 5rem 2rem;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 3rem;
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
             text-align: center;
+            margin-bottom: 1rem;
         }
 
-        .stat-item .number {
-            font-size: 3.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--ginger), var(--signal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-item .label {
+        .contact-section .subtitle {
+            text-align: center;
             font-size: 1.1rem;
             color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 3rem;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 1rem 1.25rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--ginger);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 136, 86, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 0;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            background: var(--ginger);
+            color: white;
+            padding: 1.25rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            justify-self: end;
+            min-width: 200px;
+        }
+
+        .submit-btn:hover {
+            background: #FF6A3D;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 136, 86, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Contact Form */
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-btn {
+                justify-self: stretch;
+            }
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, rgba(255, 136, 86, 0.1), rgba(0, 122, 255, 0.1));
+            background: var(--gradient-dark);
+            color: white;
             padding: 5rem 2rem;
             text-align: center;
         }
@@ -415,9 +785,9 @@
 
         .cta-section p {
             font-size: 1.2rem;
-            color: var(--steel);
-            margin-bottom: 2rem;
-            max-width: 600px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2.5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
@@ -425,481 +795,655 @@
         .btn {
             display: inline-block;
             padding: 1rem 2.5rem;
-            background: var(--ginger);
-            color: white;
-            text-decoration: none;
             border-radius: 50px;
             font-weight: 700;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 18px rgba(255, 136, 86, 0.35);
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+            margin: 0.5rem;
         }
 
-        .btn:hover {
-            background: linear-gradient(135deg, #FF8856, #FF9966);
+        .btn-primary {
+            background: var(--ginger);
+            color: white;
+            box-shadow: 0 6px 18px rgba(255, 136, 86, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #FF6A3D;
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 136, 86, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 136, 86, 0.6);
         }
 
         .btn-secondary {
-            background: white;
-            color: var(--graphite);
-            border: 2px solid var(--graphite);
-            margin-left: 1rem;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
         }
 
         .btn-secondary:hover {
-            background: var(--graphite);
-            color: white;
+            background: white;
+            color: var(--graphite);
+            transform: translateY(-3px);
         }
 
-        /* Footer */
+        /* Footer - זהה לחלוטין ל-index */
         footer {
-            background: var(--graphite);
+            background: var(--text-dark);
             color: white;
-            padding: 3rem 2rem 2rem;
-            text-align: center;
+            padding: 5rem 2rem 2rem;
+            position: relative;
         }
 
-        footer p {
-            color: rgba(255, 255, 255, 0.6);
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--gradient-blue-orange);
         }
 
-        footer a {
-            color: var(--ginger);
+        .footer-container {
+            max-width: 1320px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-column h4 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
         }
 
-        footer a:hover {
+        .footer-column a:hover {
+            color: var(--accent-orange);
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo svg {
+            height: 50px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .footer-tagline {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .legal-compliance {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border-left: 3px solid var(--ginger);
+        }
+
+        .compliance-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .compliance-link {
+            color: var(--ginger);
             text-decoration: underline;
         }
 
-        /* Mobile Menu Toggle */
-        .mobile-menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-            z-index: 1001;
+        .compliance-link:hover {
+            color: #FF6A3D;
         }
 
-        .mobile-menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--graphite);
-            border-radius: 3px;
-            transition: all 0.3s ease;
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
         }
 
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .about-hero h1 {
-                font-size: 2rem;
-            }
-
-            .about-hero .subtitle {
-                font-size: 1.1rem;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                gap: 0;
-                padding: 1rem 0;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-            }
-
-            .nav-menu.active {
-                transform: translateX(0);
-            }
-
-            .nav-menu li {
-                width: 100%;
-                text-align: center;
-                padding: 1rem 0;
-                border-bottom: 1px solid var(--ash);
-            }
-
-            .nav-menu li:last-child {
-                border-bottom: none;
-            }
-
-            .timeline::before {
-                left: 30px;
-            }
-
-            .timeline-item {
-                flex-direction: column !important;
-                padding-left: 60px;
-            }
-
-            .timeline-content {
-                width: 100% !important;
-                margin-left: 0 !important;
-            }
-
-            .timeline-marker {
-                left: 30px !important;
-            }
-
-            .mission-grid, .team-grid, .trust-grid {
+        /* Mobile Footer */
+        @media (max-width: 768px) {
+            .footer-grid {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
             }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            animation: fadeInUp 0.6s ease forwards;
         }
     </style>
 </head>
 <body>
+    <!-- Skip to Content -->
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner">
+        <p>We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking "Accept All", you consent to the use of ALL the cookies. However, you may visit "Cookie Settings" to provide a controlled consent.</p>
+        <div class="cookie-buttons">
+            <button class="cookie-btn cookie-settings" onclick="hideCookieBanner()">Cookie Settings</button>
+            <button class="cookie-btn cookie-accept" onclick="acceptCookies()">Accept All</button>
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <div class="logo">
-                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
-                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Solid INDE orange background - no gradient -->
-                        <rect width="40" height="40" rx="8" fill="#FF8856"/>
-                        <!-- Three vertical lines - simple INDE logo -->
-                        <line x1="12" y1="11" x2="12" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="20" y1="11" x2="20" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                        <line x1="28" y1="11" x2="28" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
-                    </svg>
-                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--graphite); letter-spacing: -0.02em;">INDE</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+            <a href="index.html" class="logo">
+                <!-- לוגו INDE - 3 קווים אנכיים בלבד -->
+                <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="45" height="45" rx="9" fill="url(#navGradient)"/>
+                    <!-- Three vertical lines - simple INDE logo -->
+                    <line x1="13" y1="13" x2="13" y2="32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <line x1="22.5" y1="13" x2="22.5" y2="32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <line x1="32" y1="13" x2="32" y2="32" stroke="white" stroke-width="3.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="navGradient" x1="0" y1="0" x2="45" y2="45" gradientUnits="userSpaceOnUse">
+                            <stop offset="0%" stop-color="#007AFF"/>
+                            <stop offset="100%" stop-color="#FF8856"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <span class="logo-text">INDE</span>
+            </a>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#platform">Platform</a></li>
+                <li><a href="index.html#stack">Stack</a></li>
                 <li><a href="index.html#solutions">Solutions</a></li>
-                <li><a href="index.html#stack">Platform</a></li>
-                <li><a href="about.html" style="color: var(--ginger);">About</a></li>
-                <li><a href="index.html#demo" class="btn" style="padding: 0.75rem 1.5rem; font-size: 0.9rem;">Get a Demo</a></li>
+                <li><a href="index.html#field-stories">Field Stories</a></li>
+                <li><a href="about.html">Company</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Hero -->
     <section class="about-hero">
-        <div class="container">
-            <p class="tagline">// ABOUT INDE</p>
-            <h1>We Build Autonomy That Works When Reality Breaks</h1>
-            <p class="subtitle">
-                INDE is developing the Autonomy OS for unmanned systems operating in 
-                GPS-denied, comms-degraded, and contested environments. Defense-grade 
-                by intent. Dual-use by design.
-            </p>
-        </div>
+        <span class="tagline">// Building autonomy for the real world</span>
+        <h1>About INDE</h1>
+        <p class="subtitle">
+            We're building the Autonomy OS that works when GPS fails, 
+            comms break, and uncertainty is the only constant.
+        </p>
     </section>
 
-    <!-- Mission -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Our Mission</h2>
-            <p class="section-subtitle">
-                Building autonomous systems that adapt, learn, and survive — even when 
-                GPS fails, communications degrade, and conventional approaches break down.
-            </p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Mission -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-subtitle">
+                    Build field-proven autonomy systems for defense and civil security — 
+                    systems that adapt, learn, and survive in GPS-denied and contested environments.
+                </p>
 
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <div class="icon">🎯</div>
-                    <h3>Why We Exist</h3>
-                    <p>
-                        Current autonomy systems fail when they need to work most — in contested, 
-                        GPS-denied environments. We're building the Autonomy OS that thrives precisely 
-                        where others fail.
-                    </p>
-                </div>
-
-                <div class="mission-card">
-                    <div class="icon">🛡️</div>
-                    <h3>What We Build</h3>
-                    <p>
-                        Defense-grade autonomous systems software for ground, air, and maritime platforms. 
-                        Field-proven. Multi-sensor fusion. Graceful degradation. No GPS required.
-                    </p>
-                </div>
-
-                <div class="mission-card">
-                    <div class="icon">🌍</div>
-                    <h3>Our Approach</h3>
-                    <p>
-                        Dual-use by design, compliant with EU export control regulations. 
-                        Human oversight maintained. Vendor-agnostic architecture. Open to integration.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="section" style="background: white;">
-        <div class="container">
-            <h2 class="section-title">Our Journey</h2>
-            <p class="section-subtitle">
-                From research to field deployment — building real autonomy for real-world conditions.
-            </p>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">December 2024</div>
-                        <h3>Foundation</h3>
+                <div class="mission-grid">
+                    <div class="mission-card">
+                        <div class="icon" role="img" aria-label="Target">🎯</div>
+                        <h3>GPS-Denied by Default</h3>
                         <p>
-                            INDE founded by robotics and defense-tech veterans with vision: 
-                            autonomy must work in GPS-denied environments, not just labs.
+                            We don't assume GPS. We build systems that navigate using vision, 
+                            inertial sensors, and multi-sensor fusion from day one.
                         </p>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Q1 2025</div>
-                        <h3>Platform Development</h3>
+                    <div class="mission-card">
+                        <div class="icon" role="img" aria-label="Shield">🛡️</div>
+                        <h3>Defense-Grade Reliability</h3>
                         <p>
-                            Core autonomy stack architecture finalized. Multi-sensor fusion 
-                            framework built. Initial system integration completed.
+                            Field-deployed systems in active operations. Real missions, 
+                            not demos. We build for survival, not benchmarks.
                         </p>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Q2 2025</div>
-                        <h3>First Field Tests</h3>
+                    <div class="mission-card">
+                        <div class="icon" role="img" aria-label="Rocket">🚀</div>
+                        <h3>Dual-Use by Design</h3>
                         <p>
-                            GPS-denied navigation validated in controlled environments. 
-                            Sensor fusion performance exceeds initial targets.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Q3-Q4 2025</div>
-                        <h3>Field Deployments & Scaling</h3>
-                        <p>
-                            Active field deployments initiated. EU export compliance achieved. 
-                            Expanding team and scaling operations.
+                            Military-grade tech, civil applications. Search & rescue, 
+                            infrastructure inspection, disaster response — same core stack.
                         </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats -->
-    <section class="stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="number">3</div>
-                    <div class="label">Operational Domains</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">10+</div>
-                    <div class="label">Months of Development</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">100%</div>
-                    <div class="label">GPS-Denied Focus</div>
-                </div>
-                <div class="stat-item">
-                    <div class="number">100%</div>
-                    <div class="label">Human Oversight</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <!-- Journey Timeline -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <h2 class="section-title">Our Journey</h2>
+                <p class="section-subtitle">
+                    From concept to field deployments — building real autonomy, one milestone at a time.
+                </p>
 
-    <!-- Team -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Meet the Team</h2>
-            <p class="section-subtitle">
-                Engineers, operators, and defense-tech veterans united by a mission: 
-                build autonomy systems that work when they're needed most.
-            </p>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-label="Milestone marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">January 2025</div>
+                            <h3>INDE Founded</h3>
+                            <p>
+                                Company established with a clear mission: solve GPS-denied navigation 
+                                for defense and dual-use applications.
+                            </p>
+                        </div>
+                    </div>
 
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="avatar">EL</div>
-                    <h3>Elad</h3>
-                    <p class="role">CEO & Co-Founder</p>
-                    <p class="bio">
-                        Visionary leader with deep expertise in defense-tech and autonomous systems. 
-                        Driving INDE's mission to build autonomy that works in GPS-denied environments.
-                    </p>
-                    <a href="https://www.linkedin.com/company/inde-ai" target="_blank" rel="noopener noreferrer" class="linkedin">→ LinkedIn</a>
-                </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-label="Milestone marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q1 2025</div>
+                            <h3>Core Stack Development</h3>
+                            <p>
+                                Perception, Decision, and Control modules built. Visual-inertial 
+                                framework built. Initial system integration completed.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="team-member">
-                    <div class="avatar">AM</div>
-                    <h3>Amir</h3>
-                    <p class="role">CTO & Co-Founder</p>
-                    <p class="bio">
-                        Technical architect with extensive background in autonomous systems and 
-                        navigation. Leads platform development and system integration.
-                    </p>
-                </div>
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-label="Milestone marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q2 2025</div>
+                            <h3>First Field Tests</h3>
+                            <p>
+                                GPS-denied navigation validated in controlled environments. 
+                                Sensor fusion performance exceeds initial targets.
+                            </p>
+                        </div>
+                    </div>
 
-                <div class="team-member">
-                    <div class="avatar">OR</div>
-                    <h3>Or</h3>
-                    <p class="role">Chief of Autonomy</p>
-                    <p class="bio">
-                        Autonomy systems expert specializing in GPS-denied navigation and 
-                        multi-sensor fusion. Drives core autonomy stack development.
-                    </p>
+                    <div class="timeline-item">
+                        <div class="timeline-marker" aria-label="Milestone marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-date">Q3-Q4 2025</div>
+                            <h3>Field Deployments & Scaling</h3>
+                            <p>
+                                Active field deployments initiated. EU export compliance achieved. 
+                                Expanding team and scaling operations.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <p style="text-align: center; margin-top: 3rem; color: var(--steel);">
-                <strong>+ Engineering team</strong> across perception, planning, control, and field operations
-            </p>
-        </div>
-    </section>
-
-    <!-- Why Trust Us -->
-    <section class="section" style="background: white;">
-        <div class="container">
-            <h2 class="section-title">Why Trust INDE</h2>
-            <p class="section-subtitle">
-                We earn trust through field-proven results, regulatory compliance, 
-                and transparent engineering.
-            </p>
-
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <div class="icon">🛡️</div>
-                    <h3>EU Export Compliant</h3>
-                    <p>
-                        Fully compliant with EU Dual-Use Regulation 428/2009. 
-                        Export control documentation available.
-                    </p>
-                </div>
-
-                <div class="trust-item">
-                    <div class="icon">🎯</div>
-                    <h3>Field-Deployed Systems</h3>
-                    <p>
-                        Active deployments with defense organizations. 
-                        Real missions, not just demos.
-                    </p>
-                </div>
-
-                <div class="trust-item">
-                    <div class="icon">🤝</div>
-                    <h3>NATO Interoperable</h3>
-                    <p>
-                        Designed for integration with NATO standards. 
-                        STANAG-compatible interfaces.
-                    </p>
-                </div>
-
-                <div class="trust-item">
-                    <div class="icon">🔓</div>
-                    <h3>Vendor-Agnostic</h3>
-                    <p>
-                        Open architecture. Integrates with your existing 
-                        hardware and software stack.
-                    </p>
-                </div>
-
-                <div class="trust-item">
-                    <div class="icon">👤</div>
-                    <h3>Human Oversight</h3>
-                    <p>
-                        All operational deployments maintain human 
-                        decision-making authority.
-                    </p>
-                </div>
-
-                <div class="trust-item">
-                    <div class="icon">📡</div>
-                    <h3>Multi-Domain Proven</h3>
-                    <p>
-                        Validated across ground, aerial, and maritime 
-                        platforms in field conditions.
-                    </p>
+        <!-- Stats -->
+        <section class="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="number">3</div>
+                        <div class="label">Operational Domains</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">5+</div>
+                        <div class="label">Active Prototypes</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">&lt;100ms</div>
+                        <div class="label">Re-Route Time</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="number">EU</div>
+                        <div class="label">Export Compliant</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Ready to Deploy Field-Proven Autonomy?</h2>
-            <p>
-                Request a demo or technical briefing. See INDE in action 
-                in GPS-denied and contested environments.
-            </p>
-            <a href="index.html#demo" class="btn">Request a Demo</a>
-            <a href="index.html#demo" class="btn btn-secondary">Get Technical Brief</a>
-        </div>
-    </section>
+        <!-- Team -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Meet the Team</h2>
+                <p class="section-subtitle">
+                    Engineers, operators, and defense-tech veterans united by a mission: 
+                    build autonomy systems that work when they're needed most.
+                </p>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 INDE Robotics — Autonomy for the Real World</p>
-            <p style="margin-top: 1rem;">
-                <a href="index.html">Home</a> • 
-                <a href="about.html">About</a> • 
-                <a href="index.html#solutions">Solutions</a> • 
-                <a href="index.html#stack">Platform</a>
-            </p>
-            <p style="margin-top: 2rem; font-size: 0.85rem; line-height: 1.8;">
-                <strong>Export Control & Compliance:</strong> 
-                INDE develops dual-use autonomous systems software compliant with 
-                EU export control regulations (428/2009). All operational deployments 
-                maintain human oversight in accordance with responsible AI principles.
-            </p>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="avatar">EL</div>
+                        <h3>Elad</h3>
+                        <p class="role">CEO & Co-Founder</p>
+                        <p class="bio">
+                            Visionary leader with deep expertise in defense-tech and autonomous systems. 
+                            Driving INDE's mission to build autonomy that works in GPS-denied environments.
+                        </p>
+                        <a href="https://www.linkedin.com/company/inde-ai" target="_blank" rel="noopener noreferrer" class="linkedin">→ LinkedIn</a>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar">AM</div>
+                        <h3>Amir</h3>
+                        <p class="role">CTO & Co-Founder</p>
+                        <p class="bio">
+                            Technical architect with extensive background in autonomous systems and 
+                            navigation. Leads platform development and system integration.
+                        </p>
+                        <a href="https://www.linkedin.com/company/inde-ai" target="_blank" rel="noopener noreferrer" class="linkedin">→ LinkedIn</a>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="avatar">OR</div>
+                        <h3>Or</h3>
+                        <p class="role">Chief of Autonomy</p>
+                        <p class="bio">
+                            Autonomy systems expert specializing in GPS-denied navigation and 
+                            multi-sensor fusion. Drives core autonomy stack development.
+                        </p>
+                        <a href="https://www.linkedin.com/company/inde-ai" target="_blank" rel="noopener noreferrer" class="linkedin">→ LinkedIn</a>
+                    </div>
+                </div>
+
+                <p style="text-align: center; margin-top: 3rem; color: var(--steel);">
+                    <strong>+ Engineering team</strong> across perception, planning, control, and field operations
+                </p>
+            </div>
+        </section>
+
+        <!-- Why Trust Us -->
+        <section class="section" style="background: white;">
+            <div class="container">
+                <h2 class="section-title">Why Trust INDE</h2>
+                <p class="section-subtitle">
+                    We earn trust through field-proven results, regulatory compliance, 
+                    and transparent engineering.
+                </p>
+
+                <div class="trust-grid">
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Shield">🛡️</div>
+                        <h3>EU Export Compliant</h3>
+                        <p>
+                            Fully compliant with EU Dual-Use Regulation 428/2009. 
+                            Export control documentation available.
+                        </p>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Target">🎯</div>
+                        <h3>Field-Deployed Systems</h3>
+                        <p>
+                            Active deployments with defense organizations. 
+                            Real missions, not just demos.
+                        </p>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Handshake">🤝</div>
+                        <h3>NATO Interoperable</h3>
+                        <p>
+                            Designed for integration with NATO standards. 
+                            STANAG-compatible interfaces.
+                        </p>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Unlock">🔓</div>
+                        <h3>Vendor-Agnostic</h3>
+                        <p>
+                            Open architecture. Integrates with your existing 
+                            hardware and software stack.
+                        </p>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Person">👤</div>
+                        <h3>Human Oversight</h3>
+                        <p>
+                            All operational deployments maintain human 
+                            decision-making authority.
+                        </p>
+                    </div>
+
+                    <div class="trust-item">
+                        <div class="icon" role="img" aria-label="Signal">📡</div>
+                        <h3>Multi-Domain Proven</h3>
+                        <p>
+                            Validated across ground, aerial, and maritime 
+                            platforms in field conditions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <h2>Talk to our automation experts</h2>
+                <p class="subtitle">Ask us how you can automate today with your existing machines</p>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="firstName" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="lastName" placeholder="Last Name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" placeholder="Company Name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="comments" placeholder="Comments" rows="4"></textarea>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="newsletter" name="newsletter" checked>
+                        <label for="newsletter">I wish to receive INDE™ product updates via email</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Deploy Field-Proven Autonomy?</h2>
+                <p>
+                    Request a demo or technical briefing. See INDE in action 
+                    in GPS-denied and contested environments.
+                </p>
+                <a href="#contact" class="btn btn-primary">Request a Demo</a>
+                <a href="index.html" class="btn btn-secondary">Learn More</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer - זהה ל-index -->
+    <footer id="company">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter: brightness(0) invert(1);">
+                            <rect width="50" height="50" rx="10" fill="url(#footerGradient)"/>
+                            <!-- Three vertical lines - simple INDE logo -->
+                            <line x1="15" y1="14" x2="15" y2="36" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="25" y1="14" x2="25" y2="36" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <line x1="35" y1="14" x2="35" y2="36" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="0" y1="0" x2="50" y2="50" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#007AFF"/>
+                                    <stop offset="100%" stop-color="#FF8856"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <p class="footer-tagline">Defense-grade autonomy • Dual-use by design • Vendor-agnostic</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="index.html#stack">Perception Engine</a></li>
+                        <li><a href="index.html#stack">Decision Core</a></li>
+                        <li><a href="index.html#stack">Control Bridge</a></li>
+                        <li><a href="index.html#stack">Ops Console</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Solutions</h4>
+                    <ul>
+                        <li><a href="index.html#solutions">Ground Robotics</a></li>
+                        <li><a href="index.html#solutions">Aerial Systems</a></li>
+                        <li><a href="index.html#solutions">Maritime Operations</a></li>
+                        <li><a href="index.html#solutions">Industrial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#field-stories">Field Stories</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Export Control & Compliance Statement -->
+            <div class="legal-compliance">
+                <div class="compliance-text">
+                    <strong>Export Control & Compliance:</strong> 
+                    INDE develops dual-use autonomous systems software designed for both 
+                    defense and civil security applications, compliant with EU export control 
+                    regulations (428/2009). All operational deployments maintain human oversight 
+                    in accordance with responsible AI principles. 
+                    For export inquiries and compliance documentation, please 
+                    <a href="#contact" class="compliance-link">contact our team</a>.
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 INDE Robotics — Autonomy for the Real World</p>
+            </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Cookie Banner
+        function showCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            const cookieConsent = localStorage.getItem('cookieConsent');
+            
+            if (!cookieConsent) {
+                setTimeout(() => {
+                    banner.classList.add('show');
+                }, 1000);
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            hideCookieBanner();
+        }
+
+        function hideCookieBanner() {
+            const banner = document.getElementById('cookie-banner');
+            banner.classList.remove('show');
+        }
+
+        // Show cookie banner on page load
+        window.addEventListener('load', showCookieBanner);
+
         // Smooth scroll for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
@@ -925,6 +1469,41 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+
+        // Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would typically send to your backend
+            console.log('Form submitted:', data);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Keyboard navigation accessibility
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Footer Logo Animation
+        const footerLogo = document.querySelector('.footer-logo svg');
+        if (footerLogo) {
+            footerLogo.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            footerLogo.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        }
     </script>
 </body>
 </html>
