@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liity INDE:hen - Rakenna Autonomiaa Todelliselle Maailmalle</title>
+    <meta name="description" content="Liity tiimiin, joka rakentaa GPS-vapaat autonomiajärjestelmät puolustus- ja kansalaisturvallisuuteen. Palkkaamme insinöörejä, tutkijoita ja kenttäoperaattoreita.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Liity INDE:hen - Rakenna Autonomiaa Todelliselle Maailmalle">
+    <meta property="og:description" content="Ole osa tiimiä, joka mullistaa autonomiajärjestelmät. Liity INDE Roboticsiin.">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ginger: #FF8856;
+            --graphite: #0F0F0F;
+            --steel: #3B3B3B;
+            --cloud: #F8F8F8;
+            --ash: #E6E6E6;
+            --signal: #007AFF;
+            --success: #00D084;
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cloud);
+            color: var(--graphite);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #E5E7EB;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 45px;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--graphite);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--ginger);
+        }
+
+        /* Hero Section */
+        .join-hero {
+            background: linear-gradient(135deg, var(--graphite) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+        }
+
+        .join-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .join-hero .subtitle {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.7;
+        }
+
+        .join-hero .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ginger);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--steel);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            line-height: 1.7;
+        }
+
+        /* Why Join Grid */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .why-card {
+            padding: 2.5rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--graphite);
+        }
+
+        .why-card p {
+            color: var(--steel);
+            line-height: 1.7;
+        }
+
+        /* Open Roles */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .role-card {
+            padding: 2rem;
+            background: white;
+            border: 2px solid var(--ash);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .role-card:hover {
+            border-color: var(--ginger);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .role-card .role-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+        }
+
+        .role-card .role-meta {
+            font-size: 0.9rem;
+            color: var(--ginger);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .role-card p {
+            color: var(--steel);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .role-card .btn-small {
+            display: inline-block;
+            padding: 0.7rem 1.2rem;
+            background: var(--ginger);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .role-card .btn-small:hover {
+            background: #FF9966;
+            transform: translateX(2px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--graphite), #1a1a1a);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: var(--ginger);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+        }
+
+        .btn:hover {
+            background: #FF9966;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 136, 86, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--graphite);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-column h4 {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--ginger);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-column a:hover {
+            color: var(--ginger);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .join-hero h1 {
+                font-size: 2rem;
+            }
+
+            .join-hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .why-grid, .roles-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index-fi.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="8" fill="#FF8856"/>
+                        <line x1="12" y1="11" x2="12" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="20" y1="11" x2="20" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                        <line x1="28" y1="11" x2="28" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                    <span style="font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 1.5rem; color: var(--graphite); letter-spacing: -0.02em;">INDE</span>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index-fi.html">Koti</a></li>
+                <li><a href="about-fi.html">Tietoa</a></li>
+                <li><a href="join-us-fi.html" style="color: var(--ginger);">Urataivous</a></li>
+                <li style="display: flex; gap: 0.5rem; margin-left: auto;"><a href="join-us.html" style="font-size: 0.9rem; opacity: 0.7; text-decoration: none;">EN</a> | <a href="join-us-fi.html" style="font-size: 0.9rem; opacity: 0.7; text-decoration: none;"><strong>FI</strong></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="join-hero">
+        <div class="container">
+            <p class="tagline">// URATAIVOUS</p>
+            <h1>Rakenna Autonomiaa Joka Toimii</h1>
+            <p class="subtitle">
+                Liity robotiikkatekniikoiden, insinöörien ja kenttäoperaattoreiden tiimiin, joka rakentaa seuraavan sukupolven autonomiajärjestelmiä.
+            </p>
+        </div>
+    </section>
+
+    <!-- Why Join INDE -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Miksi Liittyä INDE:hen?</h2>
+            <p class="section-subtitle">
+                Emme vain rakenna ohjelmistoa. Ratkaisemme todellisen maailman ongelmia, joilla on merkitystä.
+            </p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon">🎯</div>
+                    <h3>Missiokeskeinen</h3>
+                    <p>
+                        Työskentele järjestelmillä, jotka toimivat kiistanalaisissa, GPS-vapaaissa ympäristöissä, joissa elämät riippuvat autonomisista päätöksistä. Todellista vaikutusta, ei teoreettisia harjoituksia.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🚀</div>
+                    <h3>Huipputeknologia</h3>
+                    <p>
+                        Vedä autonomiajärjestelmien rajoja eteenpäin. Työskentele NVIDIA-laskennan, AWS-infrastruktuurin ja viimeisimpien havainnoinnin, suunnittelun ja ohjauksen edistysaskeleiden kanssa.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🤝</div>
+                    <h3>Maailmanluokan Tiimi</h3>
+                    <p>
+                        Yhteistyö puolustustekniikan veteraaneiden, PhD-tutkijoiden ja kenttäoperaattoreiden kanssa. Opi parhaista. Rakenna parhaiden kanssa. Kasva parhaiden kanssa.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🌍</div>
+                    <h3>Globaali Ulottuvuus</h3>
+                    <p>
+                        Sijaitsee Espoossa ja Helsingissä, Suomessa. Osa ekosysteemiä, joka ajaa innovaatiota pohjoismaisen tekniikan ja eurooppalaisen puolustusautonomiassa.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">💡</div>
+                    <h3>Innovaatioiden Kulttuuri</h3>
+                    <p>
+                        Ideasi ovat tärkeitä. Autonomiahaasteita on vaikea. Arvostamme insinöörejä, jotka ajattelevat syvällä, haastavat oletukset ja ehdottavat rohkeita ratkaisuja.
+                    </p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">📈</div>
+                    <h3>Kasvun Mahdollisuus</h3>
+                    <p>
+                        Liity varhain. Kasva yrityksen kanssa. Muokkaa INDE:n suuntaa. Olemme siirtymäpisteessä, jossa autonomia siirtyy tutkimuksesta käyttöönottoon.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Roles -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">Avoimet Tehtävät</h2>
+            <p class="section-subtitle">
+                Palkkaamme aktiivisesti näihin tehtäviin. Jos et näe unelmiesi positiota, ota yhteyttä joka tapauksessa.
+            </p>
+
+            <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-title">Autonomiatutkija</div>
+                    <div class="role-meta">Kokopäiväinen • Suomi</div>
+                    <p>
+                        Suunnittele ja ota käyttöön havainnointi-, suunnittelu- ja ohjausjärjestelmiä GPS-vapaisiin navigointiin. Työskentele moninaisensoriseosten ja todellisten kenttätestien kanssa.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-title">Ohjelmiston Järjestelmäinsinööri</div>
+                    <div class="role-meta">Kokopäiväinen • Suomi</div>
+                    <p>
+                        Rakenna vankkoja, skaalautuvia autonomiaalustoja. Työskentele NVIDIA Jetsonin, ROS:n ja pilviinfrastruktuurin kanssa. Keskity järjestelmän integrointiin ja kenttäkäyttöönottoon.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-title">Kenttäoperaatioiden Johtaja</div>
+                    <div class="role-meta">Kokopäiväinen • Joustava</div>
+                    <p>
+                        Koordinoi kenttäkäyttöönottoa ja testaamista. Silloita tutkimuksen ja todellisen maailman operaatioiden väli. Suora kokemus autonomisista alustoista vaaditaan.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-title">Tutkija (Havainto)</div>
+                    <div class="role-meta">Kokopäiväinen • Suomi</div>
+                    <p>
+                        Edistä havaintoalgoritmeja haastavissa ympäristöissä. Työskentele tietokoneen näyn, sensorisoinnin ja koneoppimisen kanssa. PhD tai vastaava kokemus.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-title">Teknisen Ohjelman Johtaja</div>
+                    <div class="role-meta">Kokopäiväinen • Suomi</div>
+                    <p>
+                        Omista roadmap laboratoriosta käyttöönottoon. Koordinoi ristifunktionaalisia tiimejä. Kokemus puolustus- tai robotiikkahankkeista plussaa.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+
+                <div class="role-card">
+                    <div class="role-title">Liiketoiminnan Kehitys</div>
+                    <div class="role-meta">Kokopäiväinen • Joustava</div>
+                    <p>
+                        Tunnista kumppanuuksia, kanavanhkemahdollisuuksia ja asiakkaiden tarpeita. Rakenna suhteita puolustusorganisaatioihin ja integraattoreihin globaalisti.
+                    </p>
+                    <a href="#" class="btn-small">Lue Lisää</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Meidän Palkkaamisprosessi</h2>
+            <p class="section-subtitle">
+                Pidämme sen yksinkertaisena. Tapaa meidät. Näytä meille mitä voit tehdä. Katsotaan onko se sopiva.
+            </p>
+
+            <div class="why-grid" style="margin-top: 3rem;">
+                <div class="why-card">
+                    <div class="icon">💬</div>
+                    <h3>Alkuvaiheen Keskustelu</h3>
+                    <p>30 minuuttia. Tutustukaa toisiin. Ymmärrä rooli ja taustasi. Arvioi kulttuurien sopivuus.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🧠</div>
+                    <h3>Tekninen Keskustelu</h3>
+                    <p>1-2 tuntia. Syvälle sukellus tekniikan asiantuntijuuteen. Keskustelemme ratkaisuista ja edessä olevista haasteista.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">👥</div>
+                    <h3>Tiimin Tapaaminen</h3>
+                    <p>Tapaa tiimi, jonka kanssa työskentelisit. Kysy kysymyksiä. Ymmärrä ympäristö. Arvioi tiimin dynamiikkaa.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🤝</div>
+                    <h3>Tarjous & Käyttöönotto</h3>
+                    <p>Jos olemme samalla linjalla, liikumme nopeasti. Kilpailukykyinen paketti. Selkeä tie vaikutukseen ensimmäisestä päivästä alkaen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Valmis Rakentamaan Todellista Autonomiaa?</h2>
+            <p>
+                Lähetä meille ansioluettelosi, portfolio tai vain muistiinpano siitä, miksi haluat liittyä INDE:hen. Luemme kaiken.
+            </p>
+            <button class="btn" onclick="openApplicationModal()">Lähetä Hakemuksesi</button>
+            <a href="index-fi.html" class="btn" style="background: rgba(255, 255, 255, 0.1); border: 2px solid var(--ginger);">Lue Lisää INDE:stä</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h4>INDE</h4>
+                    <ul>
+                        <li><a href="index-fi.html">Koti</a></li>
+                        <li><a href="about-fi.html">Tietoa Us</a></li>
+                        <li><a href="join-us-fi.html">Urataivous</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Resurssit</h4>
+                    <ul>
+                        <li><a href="#">Dokumentaatio</a></li>
+                        <li><a href="#">Blogi</a></li>
+                        <li><a href="#">UKK</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Laillisuus</h4>
+                    <ul>
+                        <li><a href="#">Yksityisyydensuoja</a></li>
+                        <li><a href="#">Palvelun Ehdot</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 INDE Robotics — Autonomy for the Real World</p>
+            </div>
+        </div>
+
+    <!-- Application Form Modal -->
+    <div id="applicationModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeApplicationModal()">×</button>
+            <div class="modal-header">
+                <h2>Hakemuksesi INDE:lle</h2>
+                <p>Kerro meille itsestäsi ja miksi haluat liittyä tiimiin.</p>
+            </div>
+            <form id="applicationForm" class="application-form">
+                <div class="form-group">
+                    <label for="applicant-name">Koko Nimi *</label>
+                    <input type="text" id="applicant-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-email">Sähköposti *</label>
+                    <input type="email" id="applicant-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-phone">Puhelinnumero</label>
+                    <input type="tel" id="applicant-phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-role">Kiinnostava Tehtävä *</label>
+                    <select id="applicant-role" name="role" required>
+                        <option value="">Valitse tehtävä...</option>
+                        <option value="Autonomiatutkija">Autonomiatutkija</option>
+                        <option value="Ohjelmiston Järjestelmäinsinööri">Ohjelmiston Järjestelmäinsinööri</option>
+                        <option value="Kenttäoperaatioiden Johtaja">Kenttäoperaatioiden Johtaja</option>
+                        <option value="Tutkija (Havainto)">Tutkija (Havainto)</option>
+                        <option value="Teknisen Ohjelman Johtaja">Teknisen Ohjelman Johtaja</option>
+                        <option value="Liiketoiminnan Kehitys">Liiketoiminnan Kehitys</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-bio">Kerro itsestäsi *</label>
+                    <textarea id="applicant-bio" name="message" rows="5" required placeholder="Kokeneisuutesi, intressisi autonomiajärjestelmistä, ja miksi haluat liittyä INDE:hen..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-linkedin">LinkedIn Profiili (valinnainen)</label>
+                    <input type="url" id="applicant-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-portfolio">Portfolio / GitHub (valinnainen)</label>
+                    <input type="url" id="applicant-portfolio" name="portfolio" placeholder="https://github.com/yourprofile">
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem;">Lähetä Hakemuksesi</button>
+            </form>
+            <div class="form-success" id="applicationSuccess" style="display: none; text-align: center;">
+                <h3>✓ Kiitos!</h3>
+                <p>Hakemuksesi on vastaanotettu. Tulemme ottamaan yhteyttä pian!</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--graphite);
+            width: 40px;
+            height: 40px;
+        }
+
+        .modal-header {
+            margin-bottom: 2rem;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header p {
+            color: var(--steel);
+            font-size: 0.95rem;
+        }
+
+        .application-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--ash);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--ginger);
+            box-shadow: 0 0 0 3px rgba(255, 136, 86, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form-success h3 {
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+    </style>
+
+    <script>
+        function openApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                const form = modal.querySelector('form');
+                if (form) {
+                    form.reset();
+                    const success = modal.querySelector('.form-success');
+                    if (success) {
+                        success.style.display = 'none';
+                        form.style.display = 'block';
+                    }
+                }
+            }
+        }
+
+        // Close modal on outside click
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'applicationModal') {
+                closeApplicationModal();
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeApplicationModal();
+            }
+        });
+
+        // Form submission
+        const applicationForm = document.getElementById('applicationForm');
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData);
+                
+                // Add email subject for Formspree
+                data._subject = 'Uusi Hakemuksen INDE:lle - ' + data.name;
+                data._from_name = data.name;
+                
+                // Log for analytics
+                console.log('event:application_submit', data);
+                
+                // Show loading state
+                const submitBtn = e.target.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = '⏳ Lähetetään...';
+                
+                try {
+                    // Send to Formspree
+                    const response = await fetch('https://formspree.io/f/mgvprdzr', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        // Show success message
+                        e.target.style.display = 'none';
+                        document.getElementById('applicationSuccess').style.display = 'block';
+                        
+                        // Close after 3 seconds
+                        setTimeout(() => {
+                            closeApplicationModal();
+                        }, 3000);
+                    } else {
+                        throw new Error('Hakemuksen lähettäminen epäonnistui');
+                    }
+                } catch (error) {
+                    console.error('Error submitting application:', error);
+                    alert('Virhe hakemuksen lähettämisessä. Yritä uudelleen.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        }
+    </script>
+
+    </footer>
+</body>
+</html>
