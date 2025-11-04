@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -279,6 +280,7 @@
         .logo {
             display: flex;
             align-items: center;
+            gap: 0.75rem;
         }
 
         .logo svg {
@@ -287,10 +289,32 @@
             transition: transform 0.3s ease;
             filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
             cursor: pointer;
+            flex-shrink: 0;
         }
 
         .logo svg:hover {
             transform: scale(1.05);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .logo-text .brand {
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            color: var(--text-dark);
+        }
+
+        .logo-text .tagline {
+            font-size: 0.6rem;
+            font-weight: 600;
+            color: var(--accent-orange);
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
         }
 
         .nav-menu {
@@ -326,6 +350,63 @@
 
         .nav-menu a:hover::after {
             width: 100%;
+        }
+
+        .nav-careers {
+            background: linear-gradient(135deg, var(--signal), var(--ginger));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700 !important;
+            animation: pulse-careers 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-careers {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .nav-careers::after {
+            display: none !important;
+        }
+
+        /* Header Language Switchers */
+        .nav-languages {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        .nav-languages a {
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var(--text-gray);
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .nav-languages a:hover,
+        .nav-languages a.active {
+            color: var(--accent-orange);
+            background: rgba(255, 136, 86, 0.1);
+            border-color: var(--accent-orange);
+        }
+
+        .nav-languages-separator {
+            color: #D1D5DB;
+            font-size: 0.75rem;
+        }
+
+        @media (max-width: 968px) {
+            .nav-languages {
+                display: none;
+            }
         }
 
         .btn {
@@ -1058,6 +1139,100 @@
             flex-wrap: wrap;
         }
 
+        /* Careers Section */
+        .careers-section {
+            background: linear-gradient(135deg, #F8F8F8 0%, #FFFBF7 100%);
+            padding: 7rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .careers-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 136, 86, 0.08), transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 122, 255, 0.08), transparent 50%);
+            pointer-events: none;
+        }
+
+        .careers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .careers-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--signal), var(--ginger));
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .careers-content h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            color: var(--text-dark);
+        }
+
+        .careers-tagline {
+            font-size: 1.25rem;
+            color: var(--text-gray);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            line-height: 1.8;
+        }
+
+        .careers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .career-role {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border: 2px solid #E5E7EB;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .career-role:hover {
+            border-color: var(--accent-orange);
+            box-shadow: 0 10px 30px rgba(255, 106, 0, 0.15);
+            transform: translateY(-8px);
+        }
+
+        .career-role h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+            font-weight: 700;
+        }
+
+        .career-role p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         /* Footer */
         footer {
             background: var(--text-dark);
@@ -1472,7 +1647,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">
+            <div class="logo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" style="cursor: pointer;">
                 <svg width="45" height="45" viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
                     <rect width="45" height="45" rx="9" fill="url(#navGradient)"/>
                     <!-- Three vertical lines - simple INDE logo -->
@@ -1486,6 +1661,10 @@
                         </linearGradient>
                     </defs>
                 </svg>
+                <div class="logo-text">
+                    <span class="brand">INDE</span>
+                    <span class="tagline">Robotics</span>
+                </div>
             </div>
             <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
                 <span></span>
@@ -1498,6 +1677,12 @@
                 <li><a href="#solutions">Solutions</a></li>
                 <li><a href="#field-stories">Field Stories</a></li>
                 <li><a href="about.html">Company</a></li>
+                <li><a href="join-us.html" class="nav-careers">Join Us 🚀</a></li>
+                <li class="nav-languages">
+                    <a href="#" class="lang-btn active" data-lang="en">🇬🇧 EN</a>
+                    <span class="nav-languages-separator">|</span>
+                    <a href="#" class="lang-btn" data-lang="fi">🇫🇮 FI</a>
+                </li>
                 <li><a href="#demo" class="btn btn-primary">Get a Demo</a></li>
             </ul>
         </div>
@@ -1786,13 +1971,43 @@
         </div>
     </section>
 
+    <!-- Careers Section - Featured -->
+    <section class="careers-section" id="careers">
+        <div class="careers-container">
+            <div class="careers-content">
+                <div class="careers-badge">We're Hiring!</div>
+                <h2>Join the INDE Team</h2>
+                <p class="careers-tagline">Help us build the future of autonomous systems. We're looking for talented engineers, researchers, and operators who are passionate about real-world autonomy.</p>
+                <div class="careers-grid">
+                    <div class="career-role">
+                        <h4>🛠️ Engineering</h4>
+                        <p>Software, robotics, and systems engineers</p>
+                    </div>
+                    <div class="career-role">
+                        <h4>🧠 Research</h4>
+                        <p>ML/AI specialists and autonomous systems researchers</p>
+                    </div>
+                    <div class="career-role">
+                        <h4>🎯 Operations</h4>
+                        <p>Field operators and systems integration specialists</p>
+                    </div>
+                    <div class="career-role">
+                        <h4>📊 Business</h4>
+                        <p>Sales, partnerships, and business development</p>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="window.location.href='join-us.html'">View Open Positions</button>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Banner - Cinematic -->
     <section class="cta-banner" id="demo">
         <div class="cta-content">
             <h2>Bring Your Systems to Life with INDE</h2>
             <p>From prototype to deployment — autonomy that adapts</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary">Get a Demo</button>
+                <button class="btn btn-primary" onclick="openModal('demoModal')">Get a Demo</button>
                 <button class="btn btn-outline">View Docs</button>
             </div>
         </div>
@@ -1831,9 +2046,9 @@
                     <h4>Platform</h4>
                     <ul>
                         <li><a href="#stack">Perception Engine <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="#stack">Decision Core <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="#stack">Control Bridge <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="#stack">Ops Console <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#stack">Decision Core</a></li>
+                        <li><a href="#stack">Control Bridge</a></li>
+                        <li><a href="#stack">Ops Console</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1849,10 +2064,10 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="#platform">Documentation <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="#platform">API Reference <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#platform">API Reference</a></li>
                         <li><a href="#field-stories">Field Stories</a></li>
-                        <li><a href="#company">Blog <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="#company">Support <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="#company">Blog</a></li>
+                        <li><a href="#company">Support</a></li>
                     </ul>
                 </div>
                 <div class="footer-column footer-newsletter">
@@ -2059,6 +2274,26 @@
             });
             btn.addEventListener('mouseleave', function() {
                 this.style.transform = '';
+            });
+        });
+
+        // Language Switcher
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.dataset.lang;
+                
+                // Update active state
+                document.querySelectorAll('.lang-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+                btn.classList.add('active');
+                
+                // Store preference
+                localStorage.setItem('preferred-language', lang);
+                
+                // Show alert (in real implementation, would load different language)
+                alert(`Language switched to ${lang.toUpperCase()}. Full translation coming soon! 🚀`);
             });
         });
 
