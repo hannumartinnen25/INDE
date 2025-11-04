@@ -1,0 +1,3346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomy Engineer & Robotics Jobs | INDE - GPS-Denied Navigation | Espoo, Finland</title>
+    <meta name="description" content="Join INDE and build autonomous systems that work in the real world. Hiring: Autonomy Engineers, Computer Vision / Perception, Swarm Robotics, Software Systems, Field Operations, Business Development, Robotics Operators. Espoo, Finland. European field testing.">
+    <meta name="keywords" content="robotics jobs, autonomy engineer, GPS-denied, SLAM, ROS2, Jetson edge AI, roboticist positions, Finnish tech, defense tech careers">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PLACEHOLDER', {
+            'page_path': '/careers'
+        });
+    </script>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Build Real-World Autonomy at INDE | Robotics Jobs">
+    <meta property="og:description" content="We're hiring autonomy engineers to build systems that survive mud, snow, and chaos. No simulation-only roles here.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://inde-robotics.com/og-image.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ginger: #FF8856;
+            --graphite: #0F0F0F;
+            --steel: #3B3B3B;
+            --cloud: #F8F8F8;
+            --ash: #E6E6E6;
+            --signal: #007AFF;
+            --success: #00D084;
+            --danger: #FF6B6B;
+            
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--cloud);
+            color: var(--graphite);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #E5E7EB;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: var(--graphite);
+        }
+
+        .logo span {
+            color: var(--ginger);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--graphite);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--ginger);
+        }
+
+        /* Language Selector */
+        .language-selector {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 136, 86, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-left: auto;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            cursor: pointer;
+            color: var(--steel);
+            padding: 0.3rem 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .lang-btn.active {
+            color: var(--ginger);
+            border-bottom: 2px solid var(--ginger);
+        }
+
+        .lang-btn:hover:not(.active) {
+            color: var(--graphite);
+        }
+
+        .lang-divider {
+            color: var(--ash);
+            font-weight: 300;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--cloud);
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255, 136, 86, 0.1), rgba(0, 122, 255, 0.1));
+            font-size: 3rem;
+        }
+
+        /* Share Buttons */
+        .job-share-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.2rem;
+            background: var(--cloud);
+            border: 2px solid var(--ash);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: var(--graphite);
+            transition: all 0.3s;
+            text-decoration: none;
+        }
+
+        .share-btn:hover {
+            border-color: var(--ginger);
+            color: var(--ginger);
+            background: rgba(255, 136, 86, 0.05);
+        }
+
+        .share-btn.primary {
+            background: var(--ginger);
+            color: white;
+            border-color: var(--ginger);
+        }
+
+        .share-btn.primary:hover {
+            background: #FF9966;
+            box-shadow: 0 4px 12px rgba(255, 136, 86, 0.3);
+        }
+
+        /* Video Section */
+        .video-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(255, 136, 86, 0.2));
+            padding: 4rem 2rem;
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .video-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .video-section p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .video-placeholder {
+            background: rgba(255, 255, 255, 0.1);
+            border: 3px solid var(--ginger);
+            border-radius: 12px;
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .video-placeholder:hover {
+            background: rgba(255, 136, 86, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--ginger);
+            box-shadow: var(--shadow-md);
+        }
+
+        .testimonial-text {
+            font-size: 0.95rem;
+            color: var(--steel);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--ginger), #FF6B35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-info h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.2rem;
+            color: var(--graphite);
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: var(--steel);
+        }
+
+        /* Hero Section */
+        .join-hero {
+            background: linear-gradient(135deg, var(--graphite) 0%, #1a1a1a 100%);
+            color: white;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .join-hero h1 {
+            font-size: clamp(2rem, 6vw, 3.2rem);
+            margin-bottom: 1rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .join-hero .tagline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--ginger);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .join-hero .subtitle {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            margin-top: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            flex-wrap: wrap;
+        }
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem 2.5rem;
+            background: var(--ginger);
+            color: white;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            min-height: 56px;
+            white-space: nowrap;
+        }
+
+        .btn:hover {
+            background: #FF9966;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 136, 86, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: var(--steel);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        /* Role Cards */
+        .roles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .role-card {
+            background: white;
+            border: 1px solid var(--ash);
+            border-radius: 12px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .role-card:hover {
+            border-color: var(--ginger);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .role-card.collapsed {
+            max-height: 280px;
+            overflow: hidden;
+        }
+
+        .role-card.collapsed .role-what-you-do,
+        .role-card.collapsed .role-you-bring,
+        .role-card.collapsed .apply-btn {
+            display: none;
+        }
+
+        .role-preview {
+            font-size: 0.9rem;
+            color: var(--steel);
+            margin-top: 0.5rem;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .role-expand-hint {
+            font-size: 0.8rem;
+            color: var(--ginger);
+            font-weight: 600;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .role-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            cursor: pointer;
+            margin-bottom: 1rem;
+        }
+
+        .role-header-content {
+            flex: 1;
+        }
+
+        .role-toggle-btn {
+            background: none;
+            border: none;
+            font-size: 1.8rem;
+            color: var(--ginger);
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .role-toggle-btn.expanded {
+            transform: rotate(45deg);
+        }
+
+        .role-card .role-title {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+        }
+
+        .role-card .role-meta {
+            font-size: 0.85rem;
+            color: var(--ginger);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .role-meta-tag {
+            background: rgba(255, 136, 86, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+        }
+
+        .role-card .role-story {
+            font-size: 0.95rem;
+            color: var(--steel);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+            background: rgba(15, 15, 15, 0.02);
+            padding: 1rem;
+            border-left: 3px solid var(--ginger);
+            border-radius: 4px;
+        }
+
+        .role-card .role-what-you-do {
+            margin-bottom: 1.5rem;
+        }
+
+        .role-card .role-what-you-do h4 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--graphite);
+        }
+
+        .role-card .role-what-you-do ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .role-card .role-what-you-do li {
+            font-size: 0.9rem;
+            color: var(--steel);
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .role-card .role-what-you-do li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--ginger);
+            font-weight: 700;
+        }
+
+        .role-card .role-you-bring {
+            font-size: 0.85rem;
+            color: var(--steel);
+            margin-top: auto;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--ash);
+        }
+
+        .role-card .role-you-bring strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .role-card .apply-btn {
+            display: inline-block;
+            padding: 0.7rem 1.5rem;
+            background: var(--ginger);
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            margin-top: 1.5rem;
+            border: none;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        .role-card .apply-btn:hover {
+            background: #FF9966;
+            transform: translateX(3px);
+        }
+
+        /* Day in the Life Section */
+        .day-in-life {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .day-in-life h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .day-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .day-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem;
+            background: var(--cloud);
+            border-radius: 8px;
+        }
+
+        .day-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            color: var(--ginger);
+            min-width: 100px;
+        }
+
+        .day-activity {
+            flex: 1;
+            color: var(--steel);
+            line-height: 1.6;
+        }
+
+        /* What We're NOT Section */
+        .anti-patterns {
+            background: linear-gradient(135deg, rgba(255, 136, 86, 0.05) 0%, rgba(0, 122, 255, 0.05) 100%);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .anti-patterns h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .anti-patterns-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .anti-pattern-item {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 3px solid var(--danger);
+        }
+
+        .anti-pattern-item h4 {
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            color: var(--danger);
+        }
+
+        .anti-pattern-item p {
+            font-size: 0.9rem;
+            color: var(--steel);
+        }
+
+        /* Why Grid */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .why-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .why-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .why-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .why-card p {
+            color: var(--steel);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Compensation Section */
+        .compensation-section {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            border: 2px solid var(--ash);
+            margin-top: 2rem;
+        }
+
+        .compensation-section h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .compensation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .comp-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .comp-item .comp-label {
+            font-weight: 600;
+            color: var(--graphite);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .comp-item .comp-value {
+            font-size: 1.3rem;
+            color: var(--ginger);
+            font-weight: 700;
+        }
+
+        .comp-note {
+            background: rgba(0, 122, 255, 0.05);
+            border-left: 3px solid var(--signal);
+            padding: 1rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--steel);
+            margin-top: 1.5rem;
+        }
+
+        /* Team Section */
+        .team-highlight {
+            background: linear-gradient(135deg, var(--ginger) 0%, #FF6B35 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .team-highlight h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-highlight p {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Partnership logos */
+        .partners {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .partner-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--graphite);
+            color: white;
+            padding: 3rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer h4 {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            line-height: 2;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: var(--ginger);
+        }
+
+        footer .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            padding: 2.5rem;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--graphite);
+            width: 40px;
+            height: 40px;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--graphite);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 0.85rem 1rem;
+            border: 1px solid var(--ash);
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--ginger);
+            box-shadow: 0 0 0 3px rgba(255, 136, 86, 0.1);
+        }
+
+        .form-success {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .form-success h3 {
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        /* Search & Filter */
+        .search-filter-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--ash);
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--ginger);
+            box-shadow: 0 0 0 3px rgba(255, 136, 86, 0.1);
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .filter-tag {
+            padding: 0.6rem 1.2rem;
+            background: var(--cloud);
+            border: 2px solid var(--ash);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .filter-tag:hover {
+            border-color: var(--ginger);
+            background: rgba(255, 136, 86, 0.05);
+        }
+
+        .filter-tag.active {
+            background: var(--ginger);
+            color: white;
+            border-color: var(--ginger);
+        }
+
+        .role-card.hidden {
+            display: none;
+        }
+
+        /* Sticky Mobile Button */
+        .sticky-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, var(--ginger), rgba(255, 136, 86, 0.95));
+            padding: 1rem 2rem;
+            z-index: 999;
+            box-shadow: 0 -2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .sticky-cta.visible {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .sticky-cta button {
+            padding: 0.9rem 2rem;
+            background: white;
+            color: var(--ginger);
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .sticky-cta button:hover {
+            transform: scale(1.05);
+        }
+
+        /* How We Hire - Timeline */
+        .hiring-process {
+            position: relative;
+            padding: 2rem 0;
+            margin-bottom: 3rem;
+        }
+
+        .hiring-timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            min-height: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, var(--ginger) 0%, #FFB088 100%);
+            top: 0;
+            z-index: 0;
+        }
+
+        .hiring-steps {
+            display: grid;
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+            padding: 1rem 0;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            overflow: visible;
+        }
+
+        .step:nth-child(even) .step-content {
+            order: 2;
+        }
+
+        .step:nth-child(even) .step-icon {
+            order: 1;
+        }
+
+        .step-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .step-dot {
+            width: 70px;
+            height: 70px;
+            background: white;
+            border: 4px solid var(--ginger);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 12px rgba(255, 136, 86, 0.2);
+            z-index: 2;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .step-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--ginger);
+            text-align: center;
+        }
+
+        .step-content {
+            background: #FAFAFA;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--ginger);
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .step h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: var(--graphite);
+        }
+
+        .step-time {
+            font-size: 0.8rem;
+            color: var(--ginger);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .step p {
+            font-size: 0.9rem;
+            color: var(--steel);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .hiring-timeline-line {
+                left: 20px;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-left: 0;
+            }
+
+            .step:nth-child(even) .step-content,
+            .step:nth-child(even) .step-icon {
+                order: unset;
+            }
+
+            .step-dot {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .step-number {
+                font-size: 1.5rem;
+            }
+
+            .hiring-steps {
+                gap: 2rem;
+            }
+
+            .step-content {
+                margin-left: 0;
+                padding: 1.2rem;
+            }
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 3rem;
+        }
+
+        .faq-items {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid var(--ash);
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--graphite);
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            color: var(--ginger);
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .faq-item.open .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            margin-top: 1rem;
+            color: var(--steel);
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sticky-cta {
+                padding: 0.8rem 1rem;
+            }
+
+            .filter-tags {
+                gap: 0.5rem;
+            }
+
+            .filter-tag {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hiring-steps {
+                grid-template-columns: 1fr;
+            }
+
+            body.has-sticky-cta {
+                padding-bottom: 80px;
+            }
+        }
+
+            .join-hero {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .join-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                max-width: 100%;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+
+            .day-item {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .day-time {
+                min-width: unset;
+            }
+
+            .roles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                max-width: 100%;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                font-size: 1rem;
+                padding: 1rem 2rem;
+            }
+        }
+
+        /* ===== FLOATING JOBS SIDEBAR ===== */
+        .floating-jobs-sidebar {
+            position: fixed;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 380px;
+            background: white;
+            box-shadow: var(--shadow-lg);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--ginger);
+        }
+
+        .floating-jobs-sidebar.collapsed {
+            transform: translateX(100%);
+        }
+
+        .jobs-sidebar-header {
+            padding: 1.5rem;
+            border-bottom: 2px solid var(--ash);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(135deg, var(--ginger) 0%, #FF9966 100%);
+            color: white;
+        }
+
+        .jobs-sidebar-header h2 {
+            font-size: 1.3rem;
+            margin: 0;
+        }
+
+        .jobs-count {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .sidebar-toggle-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--ginger);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1999;
+            box-shadow: var(--shadow-lg);
+            transition: all 0.3s;
+            display: none;
+        }
+
+        .sidebar-toggle-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(255, 136, 86, 0.4);
+        }
+
+        .sidebar-toggle-btn.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-sidebar-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .close-sidebar-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .jobs-list-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .jobs-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .job-item {
+            padding: 1rem;
+            background: var(--cloud);
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-right: 4px solid var(--ginger);
+        }
+
+        .job-item:hover {
+            background: white;
+            border-color: var(--ginger);
+            box-shadow: var(--shadow-md);
+            transform: translateX(-5px);
+        }
+
+        .job-item.active {
+            background: rgba(255, 136, 86, 0.1);
+            border-color: var(--ginger);
+            box-shadow: var(--shadow-md);
+        }
+
+        .job-item-title {
+            font-weight: 700;
+            color: var(--graphite);
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .job-item-meta {
+            font-size: 0.8rem;
+            color: var(--steel);
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .job-item-tag {
+            background: rgba(255, 136, 86, 0.2);
+            color: var(--ginger);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Jobs Detail Panel */
+        .jobs-detail-panel {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2500;
+        }
+
+        .jobs-detail-panel.active {
+            display: flex;
+        }
+
+        .job-details-content {
+            background: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+            padding: 2rem;
+            position: relative;
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-detail-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--ash);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .close-detail-btn:hover {
+            background: var(--ginger);
+            color: white;
+        }
+
+        .job-details-header {
+            margin-bottom: 1.5rem;
+            padding-right: 3rem;
+        }
+
+        .job-details-title {
+            font-size: 1.8rem;
+            color: var(--graphite);
+            margin-bottom: 0.5rem;
+        }
+
+        .job-details-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: var(--cloud);
+            border-radius: 10px;
+        }
+
+        .job-details-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-details-meta-label {
+            font-size: 0.8rem;
+            color: var(--steel);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+
+        .job-details-meta-value {
+            font-size: 0.95rem;
+            color: var(--graphite);
+            font-weight: 500;
+        }
+
+        .job-details-section {
+            margin-bottom: 1.5rem;
+        }
+
+        .job-details-section h3 {
+            font-size: 1.1rem;
+            color: var(--ginger);
+            margin-bottom: 0.8rem;
+            border-bottom: 2px solid var(--ash);
+            padding-bottom: 0.5rem;
+        }
+
+        .job-details-section p {
+            line-height: 1.8;
+            color: var(--steel);
+            margin-bottom: 0.8rem;
+        }
+
+        .job-details-section ul {
+            margin-left: 1rem;
+        }
+
+        .job-details-section li {
+            line-height: 1.8;
+            color: var(--steel);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Scrollbar Styling */
+        .jobs-list-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .jobs-list-container::-webkit-scrollbar-track {
+            background: var(--cloud);
+        }
+
+        .jobs-list-container::-webkit-scrollbar-thumb {
+            background: var(--ginger);
+            border-radius: 10px;
+        }
+
+        .jobs-list-container::-webkit-scrollbar-thumb:hover {
+            background: #FF9966;
+        }
+
+        @media (max-width: 768px) {
+            .floating-jobs-sidebar {
+                width: 100%;
+            }
+
+            .job-details-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .job-details-title {
+                font-size: 1.4rem;
+            }
+
+            .job-details-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Toggle Button for Floating Sidebar -->
+    <button class="sidebar-toggle-btn" id="sidebarToggleBtn">📋</button>
+
+    <!-- Floating Jobs Sidebar -->
+    <div class="floating-jobs-sidebar collapsed" id="jobsSidebar">
+        <div class="jobs-sidebar-header">
+            <div>
+                <h2>Open Positions</h2>
+                <div class="jobs-count"><span id="jobsCount">0</span></div>
+            </div>
+            <button class="close-sidebar-btn" id="closeSidebarBtn">×</button>
+        </div>
+        <div class="jobs-list-container">
+            <div class="jobs-list" id="jobsList"></div>
+        </div>
+    </div>
+
+    <!-- Job Details Modal -->
+    <div class="jobs-detail-panel" id="jobDetailsPanel">
+        <div class="job-details-content" id="jobDetailsContent"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <div class="logo">INDE <span>Robotics</span></div>
+                <span style="color: var(--graphite); font-size: 1rem; font-weight: 600;">/ Careers</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#roles">Open Roles</a></li>
+                <li><a href="#why">Why INDE</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="language-selector">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <span class="lang-divider">/</span>
+                <button class="lang-btn" data-lang="fi">FI</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="join-hero">
+        <div class="container">
+            <h1 data-translate="heroTitle">Build Autonomy That Survives the Real World</h1>
+            <p class="subtitle" data-translate="heroSubtitle">
+                We develop autonomous systems that work in the real world — without GPS, in Lapland tundra, Arctic terrain, and chaos. 
+                Join a small team shipping true autonomy from Espoo, Finland.
+            </p>
+            <div class="hero-cta-group">
+                <button class="btn" data-translate="heroApply" onclick="openApplicationModal()">🚀 Start Application</button>
+                <a href="#roles" class="btn btn-secondary" data-translate="heroRoles">↓ View Positions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Roles -->
+    <section class="section" id="roles">
+        <div class="container">
+            <h2 class="section-title" data-translate="rolesTitle">Open Positions</h2>
+            <p class="section-subtitle">
+                Real engineering. Real deployments. Real robots. No PowerPoints. We're building systems that work when weather, terrain, and chaos kick in.
+            </p>
+
+            <!-- Search & Filter -->
+            <div class="search-filter-section">
+                <input 
+                    type="text" 
+                    class="search-input" 
+                    id="searchInput" 
+                    placeholder="🔍 Search by role, skill, or keyword (e.g., SLAM, C++, Field...)"
+                    data-translate="searchPlaceholder"
+                >
+                <div class="filter-tags">
+                    <span class="filter-tag active" data-category="all" data-translate="filterAll">All Roles</span>
+                    <span class="filter-tag" data-category="autonomy" data-translate="filterAutonomy">🤖 Autonomy</span>
+                    <span class="filter-tag" data-category="software" data-translate="filterSoftware">💻 Software</span>
+                    <span class="filter-tag" data-category="field" data-translate="filterField">🚁 Field Ops</span>
+                    <span class="filter-tag" data-category="business" data-translate="filterBusiness">📊 Business</span>
+                </div>
+            </div>
+
+            <div class="roles-grid">
+                <!-- Autonomy Engineer -->
+                <div class="role-card collapsed" data-category="autonomy" data-keywords="autonomy engineer SLAM GPS-denied navigation C++ ROS2 Jetson sensor fusion" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Autonomy Engineer</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">C++ / ROS2</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "Last month our team deployed a UGV into Lapland wilderness with zero GPS. Your navigation stack kept it moving through tundra, mud, and sensor failures. That's the mission here."
+                            </div>
+                            <div class="role-preview">
+                                Build SLAM, sensor fusion, and planning systems for real-world robots operating without GPS in harsh environments.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Develop navigation and planning for UGVs & UAVs in GPS-denied environments</li>
+                            <li>Implement SLAM, sensor fusion (LiDAR/vision/radar), and control systems</li>
+                            <li>Ship code that gets tested on real platforms — immediately</li>
+                            <li>Debug edge cases from field telemetry</li>
+                            <li>Own systems from concept to deployment</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        2+ years robotics/autonomous systems · Strong C++ · ROS/PX4/SLAM experience · Comfort with Jetson hardware · Want to build real machines, not prototypes
+                    </div>
+                    
+                    <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Autonomy Engineer')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Autonomy Engineer')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Autonomy Engineer')">📧 Share</button>
+                    </div>
+                </div>
+                </div>
+
+                <!-- Computer Vision / Perception Engineer -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Computer Vision / Perception Engineer</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">Python / C++ / ROS2</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You build vision systems that actually work outdoors. Stereo cameras in snow, monocular depth in tundra, optical flow over rocks. You integrate them with LiDAR and IMU. Real sensors, real terrain, real latency constraints. That's the work."
+                            </div>
+                            <div class="role-preview">
+                                Real-time vision pipelines for autonomous systems. Stereo/monocular cameras, depth estimation, sensor fusion on edge hardware.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Develop real-time vision pipelines for autonomous UGVs, UAVs, and maritime robots</li>
+                            <li>Implement detection, segmentation, depth estimation, optical flow, terrain classification</li>
+                            <li>Work with stereo/monocular cameras — calibration, camera geometry, extrinsics/intrinsics</li>
+                            <li>Integrate camera outputs into sensor fusion pipeline (LiDAR + IMU + depth + vision)</li>
+                            <li>Deploy on edge hardware (Jetson) with real-time constraints — no cloud dependency</li>
+                            <li>Test outdoors: Lapland forests, snow, mud, ports — not simulation</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        Strong Computer Vision background · Python and/or C++ · OpenCV + ROS2 · Camera calibration & geometry (extrinsics/intrinsics) · Comfortable with real sensors and field data · Understand FPS + latency matter as much as accuracy. Bonus: VIO, basic SLAM, LiDAR fusion, TensorRT optimization, or robotics field experience
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Computer Vision / Perception Engineer')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Computer Vision / Perception Engineer')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Computer Vision / Perception Engineer')">📧 Share</button>
+                    </div>
+                </div>
+
+                <!-- Software Systems Engineer -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Software Systems Engineer</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">C++ / Python</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You own the core autonomy stack: mission planning, safety systems, vehicle control. When it breaks in the field, you own the fix. That's the job."
+                            </div>
+                            <div class="role-preview">
+                                Architecture and systems design for ROS2-based autonomy. Mission planning, safety-critical code, end-to-end ownership.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Build and maintain ROS2-based autonomy architecture</li>
+                            <li>Implement mission planning and safety-critical systems</li>
+                            <li>Design CI/CD pipelines (AWS integration)</li>
+                            <li>Work across hardware + software (Jetson, PLC, actuators)</li>
+                            <li>Mentor team on systems design</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        5+ years systems engineering · C++ expert · ROS experience · AWS or cloud deployment · Comfortable debugging hardware-software issues
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Software Systems Engineer')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Software Systems Engineer')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Software Systems Engineer')">📧 Share</button>
+                    </div>
+                </div>
+
+                <!-- Field Ops Lead -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Field Operations Lead</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">Robotics / Hardware</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You run field tests across Lapland. You're responsible for robot safety, data collection, deployment logistics, and translating real-world failures into engineering insights."
+                            </div>
+                            <div class="role-preview">
+                                Field testing, mission planning, robot hardware management, safety compliance, customer coordination on-site.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Plan and execute field test campaigns (Lapland tundra, Arctic ports, snow environments)</li>
+                            <li>Manage robot hardware, sensors, telemetry systems</li>
+                            <li>Collect data, document failures, communicate issues to engineering</li>
+                            <li>Safety and regulatory compliance</li>
+                            <li>Coordinate with customers/stakeholders on-site</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        3+ years robotics field work or mechanical engineering · Problem-solving under pressure · Hardware troubleshooting · Communication skills · Safety mindset
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Field Operations Lead')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Field Operations Lead')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Field Operations Lead')">📧 Share</button>
+                    </div>
+                </div>
+
+                <!-- Swarm Robotics Engineer -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Swarm Robotics Engineer</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">Multi-Agent Systems</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You design systems where 5+ robots coordinate without central control. Last month your flocking algorithm kept a swarm coherent in GPS-denied Lapland terrain. That's hard. That's what we do."
+                            </div>
+                            <div class="role-preview">
+                                Multi-robot coordination algorithms, distributed decision-making, swarm behaviors. Publish research and build IP.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Design multi-robot coordination algorithms (distributed decision-making, formation control)</li>
+                            <li>Implement swarm behaviors in ROS2 / middleware (DDS, message passing)</li>
+                            <li>Test on real multi-robot platforms in field conditions</li>
+                            <li>Work with perception team on distributed sensing across robots</li>
+                            <li>Publish research and build IP around swarm autonomy</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        Multi-agent systems · Distributed algorithms · Control theory or swarm robotics background · Comfortable with complexity and emergence · Field testing mindset
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Swarm Robotics Engineer')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Swarm Robotics Engineer')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Swarm Robotics Engineer')">📧 Share</button>
+                    </div>
+                </div>
+
+                <!-- Business Development Manager -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Business Development Manager</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">Sales / Partnerships</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You close deals with defense + civil agencies across Europe. Last month you negotiated a pilot contract with a Nordic port authority. Your mission: turn autonomy research into deployed revenue."
+                            </div>
+                            <div class="role-preview">
+                                Sales cycles with government/defense customers, strategic partnerships, customer demos, revenue growth for real autonomous systems.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Identify and pitch customers (defense, infrastructure, ports, logistics)</li>
+                            <li>Lead sales cycles from RFQ to contract signature</li>
+                            <li>Build strategic partnerships with integrators and system providers</li>
+                            <li>Support field demos and customer technical visits</li>
+                            <li>Feed customer feedback into product roadmap</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        5+ years B2B sales or BD · Ability to explain complex tech · Comfort with government/defense procurement · Network in Nordic/European market · Travel willingness
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Business Development Manager')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Business Development Manager')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Business Development Manager')">📧 Share</button>
+                    </div>
+                </div>
+
+                <!-- Robotics Tools Operator -->
+                <div class="role-card collapsed" onclick="toggleRole(this)">
+                    <div class="role-header">
+                        <div class="role-header-content">
+                            <h3 class="role-title">Robotics Tools Operator</h3>
+                            <div class="role-meta">
+                                <span class="role-meta-tag">Espoo</span>
+                                <span class="role-meta-tag">Mechanical / Hardware</span>
+                                <span class="role-meta-tag">Full-time</span>
+                            </div>
+                            <div class="role-story">
+                                "You operate and maintain our robot fleet across European field sites. One week in Lapland testing tundra terrain, next week in a German port stress-testing navigation systems. You're the hands-on expert who keeps iron in the field."
+                            </div>
+                            <div class="role-preview">
+                                Operating UGVs/UAVs/maritime robots, field testing across Europe, maintenance, troubleshooting, data collection, customer coordination.
+                            </div>
+                            <div class="role-expand-hint">
+                                ⬇ Tap to see full role details
+                            </div>
+                        </div>
+                        <button class="role-toggle-btn">+</button>
+                    </div>
+                    <div class="role-what-you-do">
+                        <h4>What You'll Actually Do</h4>
+                        <ul>
+                            <li>Operate UGVs, UAVs, and maritime robots in field conditions</li>
+                            <li>Conduct autonomous system tests across Europe (Lapland, ports, harsh environments)</li>
+                            <li>Perform routine maintenance and troubleshoot hardware issues</li>
+                            <li>Collect data and document system performance / failures</li>
+                            <li>Coordinate with customers and engineering teams on-site</li>
+                        </ul>
+                    </div>
+                    <div class="role-you-bring">
+                        <strong>You bring:</strong>
+                        2+ years robotics operations or heavy equipment · Mechanical aptitude · Safety discipline · Comfort with field conditions (mud, snow, rain, travel) · European travel ready (20-30% time away)
+                    </div>
+                                        <div class="job-share-buttons">
+                        <button class="share-btn primary" onclick="applyForRole(event, 'Robotics Tools Operator')">🚀 Apply</button>
+                        <button class="share-btn" onclick="saveJobAsPDF('Robotics Tools Operator')">📥 Save as PDF</button>
+                        <button class="share-btn" onclick="shareJobViaEmail('Robotics Tools Operator')">📧 Share</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Day in the Life -->
+            <div class="day-in-life">
+                <h3>📅 Day in the Life (Autonomy Engineer)</h3>
+                <p style="font-size: 0.9rem; color: var(--steel); margin-bottom: 1.5rem;">
+                    <strong>Note:</strong> Most days follow this schedule. When testing in the field, hours flex — you might start at 7am or wrap at 7pm depending on conditions. We don't track hours; we track progress and real impact.
+                </p>
+                <div class="day-timeline">
+                    <div class="day-item">
+                        <div class="day-time">09:00</div>
+                        <div class="day-activity"><strong>Code Review:</strong> Your SLAM improvements get feedback. Teammates point out edge case with sparse LiDAR. You improve confidence bounds.</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">10:30</div>
+                        <div class="day-activity"><strong>Deploy to Test Robot:</strong> New navigation logic compiled. You and field ops drive UGV to Lapland test zone. Test takes 2 hours.</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">13:00</div>
+                        <div class="day-activity"><strong>Lunch + Mission Review:</strong> Telemetry showed your code failed in rocky terrain. Interesting failure. You grab coffee with the perception team to debug.</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">14:00</div>
+                        <div class="day-activity"><strong>Debug Session:</strong> Root cause: sensor fusion wasn't weighted correctly for low-texture environments. You fix it. Testing again tomorrow.</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">16:00</div>
+                        <div class="day-activity"><strong>Integration:</strong> Perception AI team pushed new models. You integrate into pipeline, run simulation suite. Everything passes.</div>
+                    </div>
+                    <div class="day-item">
+                        <div class="day-time">17:30</div>
+                        <div class="day-activity"><strong>End of Day:</strong> Commit code. Write test plan for tomorrow's field deployment. Done.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Anti-Patterns -->
+            <div class="anti-patterns">
+                <h3>❌ What We're NOT</h3>
+                <div class="anti-patterns-grid">
+                    <div class="anti-pattern-item">
+                        <h4>Not a simulation-only lab</h4>
+                        <p>If it doesn't run on real hardware in real weather, it doesn't ship. No "future work" projects.</p>
+                    </div>
+                    <div class="anti-pattern-item">
+                        <h4>Not 500-person org</h4>
+                        <p>We're 12 people. Low ego, high autonomy. You own your work end-to-end. No death-by-committee.</p>
+                    </div>
+                    <div class="anti-pattern-item">
+                        <h4>Not PowerPoint culture</h4>
+                        <p>We don't ship slides. We ship robots. Time spent talking > documenting. Show, don't tell.</p>
+                    </div>
+                    <div class="anti-pattern-item">
+                        <h4>Not forced relocation</h4>
+                        <p>You work in Espoo. You need field time. But Espoo is home — no remote-only compromise.</p>
+                    </div>
+                    <div class="anti-pattern-item">
+                        <h4>Not startup chaos</h4>
+                        <p>We have structure, process, and runway. AWS-backed. NVIDIA partner. Not ramen noodles.</p>
+                    </div>
+                    <div class="anti-pattern-item">
+                        <h4>Not resume-padding</h4>
+                        <p>You work on hard problems that matter. Dual-use tech with human oversight, always.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployments & Proof -->
+    <section class="section" style="background: linear-gradient(135deg, rgba(255, 136, 86, 0.08) 0%, rgba(0, 122, 255, 0.08) 100%);">
+        <div class="container">
+            <h2 class="section-title">🚀 Proof: Real Deployments</h2>
+            <p class="section-subtitle">
+                We're not a research project. We ship. Here's the evidence.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 2.5rem; color: var(--ginger); font-weight: 800;">17+</h3>
+                    <p style="color: var(--steel); font-size: 1rem;">Autonomous Robots Deployed</p>
+                    <p style="color: var(--steel); font-size: 0.85rem; margin-top: 0.5rem;">Lapland, Nordic Ports, Arctic Terrain</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 2.5rem; color: var(--ginger); font-weight: 800;">15+</h3>
+                    <p style="color: var(--steel); font-size: 1rem;">Successful Field Missions</p>
+                    <p style="color: var(--steel); font-size: 0.85rem; margin-top: 0.5rem;">GPS-Denied, Real Weather, Real Conditions</p>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 12px; text-align: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+                    <h3 style="font-size: 2.5rem; color: var(--ginger); font-weight: 800;">0</h3>
+                    <p style="color: var(--steel); font-size: 1rem;">Software-Related Failures</p>
+                    <p style="color: var(--steel); font-size: 0.85rem; margin-top: 0.5rem;">Rigor. Testing. Real Systems.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 3rem; text-align: center;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--graphite);">Backed By</h3>
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; color: var(--graphite);">☁️ AWS Partner</div>
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; color: var(--graphite);">🚀 NVIDIA Inception</div>
+                    <div style="background: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; color: var(--graphite);">🇪🇺 EU-Funded</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Hire -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title" data-translate="hireTitle">📋 How We Hire</h2>
+            <p class="section-subtitle">
+                No surprises. No black holes. Here's exactly what happens after you apply.
+            </p>
+            <div class="hiring-process">
+                <div class="hiring-timeline-line"></div>
+                <div class="hiring-steps">
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">1</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Submit Application</h3>
+                            <p class="step-time">⏱️ Immediate</p>
+                            <p>You submit your application with CV and portfolio. We review personally within 2 business days and reach out if we see a fit.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">2</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Initial Conversation</h3>
+                            <p class="step-time">⏱️ 30 minutes</p>
+                            <p>Casual intro call to discuss your background, what excites you about autonomy, and what you're looking for. We explain the role and culture.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">3</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Technical Task</h3>
+                            <p class="step-time">⏱️ 2-3 hours</p>
+                            <p>Take-home technical task based on real problems we solve. Design-focused, not a trick question. We pay for your time (€150-300).</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">4</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Team Meeting</h3>
+                            <p class="step-time">⏱️ 1 hour</p>
+                            <p>Meet the team (2-3 people). Discuss your solution, ask technical questions, and evaluate mutual fit. Real conversation, not interrogation.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">5</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Field Visit (Optional)</h3>
+                            <p class="step-time">⏱️ Half-day or full-day</p>
+                            <p>Come to Lapland or Espoo to see real robots in action. Meet more team members and experience our culture. We cover all travel costs.</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <div class="step-dot">
+                                <div class="step-number">6</div>
+                            </div>
+                        </div>
+                        <div class="step-content">
+                            <h3>Offer & Negotiation</h3>
+                            <p class="step-time">⏱️ Flexible</p>
+                            <p>We make an offer. Discuss salary, equity, benefits, start date, and any other details. Everything is negotiable. We treat this like adults.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" style="background: var(--cloud);">
+        <div class="container">
+            <h2 class="section-title" data-translate="faqTitle">❓ Frequently Asked</h2>
+            <p class="section-subtitle" data-translate="faqSubtitle">Questions we hear often.</p>
+            <div class="faq-section">
+                <div class="faq-items">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you offer visa sponsorship?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes. We sponsor visa + relocation support for non-EU candidates. If you're building autonomy systems and want to work in Espoo, we make it happen.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I work remote?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Mostly office-based (Espoo). Field testing requires on-site time. If you live in Nordic region, we're flexible. If you're in US/Asia, we'd discuss as part of hiring. Not primarily remote, but not rigid either.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What languages do you work in?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            English is our working language (code, docs, meetings). Some team members speak Finnish. We don't require Finnish, but learning basic phrases is appreciated. Autonomy transcends language anyway.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What's the average response time?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            2 business days. We read every application personally. If you don't hear from us in 3 days, check spam or email careers@inde-robotics.com directly. No automated rejections, no black holes.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you have internships / graduate programs?</span>
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            For now, we hire full-time roles only (mission-critical work + robot safety). If you're a recent grad, apply for the role you want. If you're exceptional, we'll make something work.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title" data-translate="compTitle">Compensation <h2 class="section-title">Compensation & Benefits</h2> Benefits</h2>
+            <p class="section-subtitle">
+                We pay competitive Nordic salaries. You earn more if you deliver more impact.
+            </p>
+
+            <div class="compensation-section">
+                <h3>📊 What We Offer</h3>
+                <div class="compensation-grid">
+                    <div class="comp-item">
+                        <div class="comp-label">Base Salary</div>
+                        <div class="comp-value">Competitive</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-label">Equity</div>
+                        <div class="comp-value">Yes</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-label">Benefits</div>
+                        <div class="comp-value">Full</div>
+                    </div>
+                    <div class="comp-item">
+                        <div class="comp-label">Visa</div>
+                        <div class="comp-value">Sponsored</div>
+                    </div>
+                </div>
+
+                <div class="comp-note">
+                    <strong>How we set salary:</strong> Based on your experience, the role, and market rates. We discuss specifics in the first call—no surprises, no games.
+                </div>
+
+                <div class="comp-note">
+                    <strong>Perks:</strong> High-spec laptop of your choice · Jetson hardware · AWS credits · Gym membership · Language courses · Coffee budget · Home office setup · Flexible hours (be in the field when needed).
+                </div>
+
+                <div class="comp-note">
+                    <strong>Our Response Time:</strong> We review every application personally and respond within 2 business days. No black hole here.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title" data-translate="galleryTitle">📸 See Us In Action</h2>
+            <p class="section-subtitle">
+                Real robots. Real terrain. Real work. No stock photos.
+            </p>
+            
+            <div class="photo-gallery">
+                <!-- Placeholder 1: Lapland Testing -->
+                <div class="gallery-item" title="Robots in Lapland tundra">
+                    <div class="gallery-placeholder">📍</div>
+                </div>
+                
+                <!-- Placeholder 2: Team at Work -->
+                <div class="gallery-item" title="Team working on robots">
+                    <div class="gallery-placeholder">👥</div>
+                </div>
+                
+                <!-- Placeholder 3: Robot Close-up -->
+                <div class="gallery-item" title="UGV with sensors">
+                    <div class="gallery-placeholder">🤖</div>
+                </div>
+                
+                <!-- Placeholder 4: Field Testing -->
+                <div class="gallery-item" title="Field testing in harsh conditions">
+                    <div class="gallery-placeholder">🏞️</div>
+                </div>
+                
+                <!-- Placeholder 5: Office Space -->
+                <div class="gallery-item" title="INDE office in Espoo">
+                    <div class="gallery-placeholder">🏢</div>
+                </div>
+                
+                <!-- Placeholder 6: Arctic Operations -->
+                <div class="gallery-item" title="Arctic deployment">
+                    <div class="gallery-placeholder">❄️</div>
+                </div>
+            </div>
+            
+            <p style="text-align: center; margin-top: 2rem; color: var(--steel); font-size: 0.95rem;">
+                📝 <strong>Note:</strong> Replace placeholders with your actual photos. Use real, unpolished images of robots in the field, your team, and office.
+            </p>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="section">
+        <div class="container">
+            <div class="video-section">
+                <h3 data-translate="videoTitle">🎥 Meet the Team</h3>
+                <p>2-minute walkthrough: What we're building and why we're hiring.</p>
+                <div class="video-placeholder" onclick="alert('Replace with your video URL (YouTube embed or Loom)')">
+                    ▶️
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 1rem; opacity: 0.8;">
+                    Click to play · Or embed your Loom/YouTube link
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section" style="background: var(--cloud);">
+        <div class="container">
+            <h2 class="section-title" data-translate="testimonialTitle">💬 What Our Team Says</h2>
+            <p class="section-subtitle">
+                Hear from engineers who've joined INDE and are building real autonomy.
+            </p>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "I came here to build simulation software. Now I'm shipping code that runs on real robots in Lapland. Game changer."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Maria K.</h4>
+                            <p>Autonomy Engineer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The team actually listens. We shipped a feature I suggested within 2 weeks. Small team, big impact."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div class="testimonial-info">
+                            <h4>Alex R.</h4>
+                            <p>Computer Vision Engineer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "This isn't the usual startup chaos. We move fast, but with purpose. The autonomy challenges here keep me sharp."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Sami T.</h4>
+                            <p>Field Operations Lead</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join -->
+    <section class="section" id="why">
+        <div class="container">
+            <h2 class="section-title" data-translate="whyTitle">Why Join INDE</h2>
+            <p class="section-subtitle">
+                Because building real autonomy beats building prototypes. Every day.
+            </p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="icon">🤖</div>
+                    <h3>Real Deployments</h3>
+                    <p>Your code runs on robots in Lapland tundra, Arctic ports, and chaos terrain. Today. Not "Q4". Not vaporware. Real metal, real terrain, real impact.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🎯</div>
+                    <h3>Full Ownership</h3>
+                    <p>You own your work from idea to robot to mission. No hand-offs. No "that's not my team's problem." You build it, you own it.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">👥</div>
+                    <h3>Elite Small Team</h3>
+                    <p>12 people. High trust. Low ego. High mastery. You learn from the best. You mentor junior engineers. You move fast because you're small.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🛠️</div>
+                    <h3>Best Tools</h3>
+                    <p>NVIDIA Jetson labs. AWS compute. Edge hardware. ROS2. Real robotics rigs. Not limited by budget. You have what you need.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">📈</div>
+                    <h3>Backed by Giants</h3>
+                    <p>AWS Startup Partner. NVIDIA Inception Program. Runway. Credibility. Growth. Not a bet. A funded mission.</p>
+                </div>
+
+                <div class="why-card">
+                    <div class="icon">🌍</div>
+                    <h3>Espoo Ecosystem</h3>
+                    <p>Heart of Nordic deep tech. Robotics talent. AI leaders. Coffee culture. Forest proximity. Not Silicon Valley hype. Real engineering.</p>
+                </div>
+            </div>
+
+            <div class="team-highlight">
+                <h3>🧠 The Team</h3>
+                <p>
+                    Our founders led autonomy at [REDACTED defense org] and [REDACTED robotics company]. 
+                    They've shipped autonomous systems at scale. They've failed. They've learned. 
+                    Now they're building the stack they wish existed.
+                </p>
+                <p>
+                    The team is small, focused, and insanely good at shipping. 
+                    You'll work directly with people who understand the problem deeply.
+                </p>
+                <div class="partners">
+                    <div class="partner-badge">🤝 AWS Partner</div>
+                    <div class="partner-badge">🚀 NVIDIA Inception</div>
+                    <div class="partner-badge">🏛️ EU-Funded</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">👥 Built By Roboticists, For Roboticists</h2>
+            <p class="section-subtitle">
+                Our team has shipped real autonomous systems. We know the challenges. We solve them.
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: var(--cloud); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--ginger);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Founder & CEO</h3>
+                    <p style="font-weight: 600; color: var(--graphite);">10+ years autonomy experience</p>
+                    <p style="font-size: 0.9rem; color: var(--steel); margin-top: 0.5rem;">Led autonomous systems at defense + robotics. GPS-denied navigation specialist.</p>
+                </div>
+
+                <div style="background: var(--cloud); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--ginger);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">CTO</h3>
+                    <p style="font-weight: 600; color: var(--graphite);">NVIDIA + Edge AI specialist</p>
+                    <p style="font-size: 0.9rem; color: var(--steel); margin-top: 0.5rem;">Built Jetson-based robotics systems. Real-time perception at scale.</p>
+                </div>
+
+                <div style="background: var(--cloud); padding: 2rem; border-radius: 12px; border-left: 4px solid var(--ginger);">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Head of Field Operations</h3>
+                    <p style="font-weight: 600; color: var(--graphite);">20+ field deployments</p>
+                    <p style="font-size: 0.9rem; color: var(--steel); margin-top: 0.5rem;">Operated UGVs, UAVs in hostile environments. Knows what breaks in the field.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: var(--cloud);">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" data-translate="readyTitle">Ready to Build Real Autonomy?</h2>
+            <p class="section-subtitle">
+                Fill out your application below (takes 5 minutes). We review every application personally and respond within 2 business days.
+            </p>
+            <button class="btn" data-translate="readyBtn" onclick="openApplicationModal()" style="font-size: 1.1rem; padding: 1.1rem 3rem;">🚀 Start Application</button>
+            <p style="margin-top: 2rem; color: var(--steel); font-size: 0.95rem;">
+                Questions? Email us: <strong>careers@inde-robotics.com</strong>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h4>INDE Robotics</h4>
+                <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.9rem; margin-bottom: 1rem;">
+                    Building GPS-denied autonomy systems. From Espoo, Finland.
+                </p>
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: 0.85rem;">
+                    📍 Espoo, Finland<br>
+                    📧 careers@inde-robotics.com
+                </p>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Technology</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+            </div>
+            <div>
+                <h4>Socials</h4>
+                <a href="https://x.com/Inde_Robotics" target="_blank">Twitter/X</a>
+                <a href="https://www.linkedin.com/company/inde-robotics" target="_blank">LinkedIn</a>
+                <a href="https://github.com/inde-robotics" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 INDE Robotics. We believe autonomy should work in the real world.</p>
+        </div>
+    </footer>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta" id="stickyCTA">
+        <button onclick="openApplicationModal()">🚀 Apply Now</button>
+    </div>
+
+    <!-- Application Modal -->
+    <div class="modal" id="applicationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeApplicationModal()">×</button>
+            <div class="modal-header">
+                <h2 data-translate="formTitle">Join INDE Robotics</h2>
+                <p>Tell us about yourself. We respond to every application — humans only.</p>
+            </div>
+            <form class="application-form" id="applicationForm">
+                <div class="form-group">
+                    <label for="applicant-name">Your Name *</label>
+                    <input type="text" id="applicant-name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-email">Email *</label>
+                    <input type="email" id="applicant-email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-phone">Phone (optional)</label>
+                    <input type="tel" id="applicant-phone" name="phone">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-role">Interested Position *</label>
+                    <select id="applicant-role" name="role" required>
+                        <option value="">Select a position...</option>
+                        <option value="Autonomy Engineer">Autonomy Engineer</option>
+                        <option value="Computer Vision / Perception Engineer">Computer Vision / Perception Engineer</option>
+                        <option value="Software Systems Engineer">Software Systems Engineer</option>
+                        <option value="Swarm Robotics Engineer">Swarm Robotics Engineer</option>
+                        <option value="Field Operations Lead">Field Operations Lead</option>
+                        <option value="Business Development Manager">Business Development Manager</option>
+                        <option value="Robotics Tools Operator">Robotics Tools Operator</option>
+                        <option value="Open Application">I'm exploring / other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-bio">Tell Us About Yourself *</label>
+                    <textarea id="applicant-bio" name="message" rows="5" required placeholder="Your experience, what excites you about autonomy, why you want to join INDE..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-linkedin">LinkedIn Profile (optional)</label>
+                    <input type="url" id="applicant-linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-portfolio">Portfolio / GitHub (optional)</label>
+                    <input type="url" id="applicant-portfolio" name="portfolio" placeholder="https://github.com/yourprofile">
+                </div>
+
+                <div class="form-group">
+                    <label for="applicant-cv">CV / Resume (PDF, max 10MB) *</label>
+                    <input type="file" id="applicant-cv" name="cv" accept=".pdf" required>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%; margin-top: 1.5rem; font-size: 1.1rem; padding: 1.2rem;">🚀 Send Application</button>
+            </form>
+            <div class="form-success" id="applicationSuccess" style="display: none;">
+                <h3 data-translate="formSuccess">✓ Application Received!</h3>
+                <p style="margin-bottom: 1rem;">Thank you for applying to INDE Robotics.</p>
+                <p style="font-size: 0.9rem; color: var(--steel);">We review every application personally and respond within 2 business days.</p>
+                <p style="font-size: 0.9rem; color: var(--steel); margin-top: 1rem;">Check your email for updates. In the meantime, follow us on:</p>
+                <div style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
+                    <a href="https://x.com/Inde_Robotics" target="_blank" style="color: var(--ginger); text-decoration: none; font-weight: 600;">𝕏 Twitter</a>
+                    <a href="https://www.linkedin.com/company/inde-robotics" target="_blank" style="color: var(--ginger); text-decoration: none; font-weight: 600;">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ===== TRANSLATIONS & LANGUAGE SUPPORT =====
+        const translations = {
+            en: {
+                // Hero
+                heroTitle: "Build Autonomy That Survives the Real World",
+                heroSubtitle: "We develop autonomous systems that work in the real world — without GPS, in Lapland tundra, Arctic terrain, and chaos. Join a small team shipping true autonomy from Espoo, Finland.",
+                heroApply: "🚀 Start Application",
+                heroRoles: "↓ View Positions",
+
+                // Open Positions
+                rolesTitle: "Open Positions",
+                rolesSubtitle: "Real engineering. Real deployments. Real robots. No PowerPoints. We're building systems that work when weather, terrain, and chaos kick in.",
+                searchPlaceholder: "🔍 Search by role, skill, or keyword",
+                filterAll: "All Roles",
+                filterAutonomy: "🤖 Autonomy",
+                filterSoftware: "💻 Software",
+                filterField: "🚁 Field Ops",
+                filterBusiness: "📊 Business",
+
+                // Photo Gallery
+                galleryTitle: "📸 See Us In Action",
+                gallerySubtitle: "Real robots. Real terrain. Real work. No stock photos.",
+                galleryNote: "📝 Note: Replace placeholders with your actual photos. Use real, unpolished images of robots in the field, your team, and office.",
+
+                // Video Section
+                videoTitle: "🎥 Meet the Team",
+                videoSubtitle: "2-minute walkthrough: What we're building and why we're hiring.",
+                videoNote: "Click to play · Or embed your Loom/YouTube link",
+
+                // Testimonials
+                testimonialTitle: "💬 What Our Team Says",
+                testimonialSubtitle: "Hear from engineers who've joined INDE and are building real autonomy.",
+
+                // How We Hire
+                hireTitle: "📋 How We Hire",
+                hireSubtitle: "No surprises. No black holes. Here's exactly what happens after you apply.",
+                hireStep1: "Apply",
+                hireStep1Desc: "You submit your application + CV. We review personally within 2 business days.",
+                hireStep2: "Talk",
+                hireStep2Desc: "30-min intro call. We discuss your background, what excites you about autonomy.",
+                hireStep3: "Technical Task",
+                hireStep3Desc: "Take-home technical task (2-3 hours). Design problem relevant to the role. We pay for your time.",
+                hireStep4: "Team Meeting",
+                hireStep4Desc: "Meet the team. Talk about your solution. Ask anything.",
+                hireStep5: "Field Day",
+                hireStep5Desc: "Optional: Come to Lapland or Espoo. See the robots. Experience the real work.",
+                hireStep6: "Offer",
+                hireStep6Desc: "Offer + negotiation. Salary, equity, start date. All discussed like adults.",
+
+                // FAQ
+                faqTitle: "❓ Frequently Asked",
+                faqSubtitle: "Questions we hear often.",
+                faqQ1: "Do you offer visa sponsorship?",
+                faqA1: "Yes. We sponsor visa + relocation support for non-EU candidates. If you're building autonomy systems and want to work in Espoo, we make it happen.",
+                faqQ2: "Can I work remote?",
+                faqA2: "Mostly office-based (Espoo). Field testing requires on-site time. If you live in Nordic region, we're flexible. If you're in US/Asia, we'd discuss as part of hiring.",
+                faqQ3: "What languages do you work in?",
+                faqA3: "English is our working language (code, docs, meetings). Some team members speak Finnish. We don't require Finnish, but learning basic phrases is appreciated.",
+                faqQ4: "What's the average response time?",
+                faqA4: "2 business days. We read every application personally. If you don't hear from us in 3 days, check spam or email careers@inde-robotics.com directly.",
+                faqQ5: "Do you have internships / graduate programs?",
+                faqA5: "For now, we hire full-time roles only (mission-critical work + robot safety). If you're a recent grad, apply for the role you want. If you're exceptional, we'll make something work.",
+
+                // Why Join
+                whyTitle: "Why Join INDE",
+                whySubtitle: "Because building real autonomy beats building prototypes. Every day.",
+                why1Title: "🤖 Real Deployments",
+                why1: "Your code runs on robots in Lapland tundra, Arctic ports, and chaos terrain. Today. Not \"Q4\". Not vaporware. Real metal, real terrain, real impact.",
+                why2Title: "🎯 No Bullshit",
+                why2: "We don't do \"move fast and break things\" startup theater. No all-hands at 10pm. No standing desks as culture. No ping-pong tables. Just work that matters.",
+                why3Title: "🚀 Autonomy (Real)",
+                why3: "You own your systems. You design architecture, make decisions, ship code. No committee approvals. No design-by-committee. You're an engineer, not a code monkey.",
+                why4Title: "🧠 Respect for Hard Problems",
+                why4: "GPS-denied navigation, sensor fusion, real-time robotics — these aren't easy. We don't pretend they are. We pay competitively, we give you time, and we back your research.",
+                why5Title: "🌍 Nordic Base",
+                why5: "Espoo is the epicenter of Nordic tech. Great schools, high quality of life, stable government, excellent healthcare. You'll be happy here.",
+                why6Title: "🤝 Small Team",
+                why6: "15-person engineering team. Everyone matters. No politics. No silos. You'll know every person on the team and directly impact product direction.",
+
+                // Compensation
+                compTitle: "Compensation & Benefits",
+                compSubtitle: "We pay competitive Nordic salaries. You earn more if you deliver more impact.",
+                compHow: "How we set salary:",
+                compHowDesc: "Based on your experience, the role, and market rates. We discuss specifics in the first call—no surprises, no games.",
+                compPerks: "Perks:",
+                compPerksDesc: "High-spec laptop of your choice · Jetson hardware · AWS credits · Gym membership · Language courses · Coffee budget · Home office setup · Flexible hours (be in the field when needed).",
+                compResponse: "Our Response Time:",
+                compResponseDesc: "We review every application personally and respond within 2 business days. No black hole here.",
+
+                // Ready CTA
+                readyTitle: "Ready to Build Real Autonomy?",
+                readyDesc: "Fill out your application below (takes 5 minutes). We review every application personally and respond within 2 business days.",
+                readyBtn: "🚀 Start Application",
+
+                // Form
+                formTitle: "Join INDE Robotics",
+                formSubtitle: "Tell us about yourself. We respond to every application — humans only.",
+                formSuccess: "✓ Application Received!",
+                formSuccessMsg: "Thank you for applying to INDE Robotics.",
+                formSuccessResponse: "We review every application personally and respond within 2 business days."
+            },
+            fi: {
+                // Hero
+                heroTitle: "Rakenna autonomiaa, joka kestää oikean maailman",
+                heroSubtitle: "Kehitämme autonomisia järjestelmiä, jotka toimivat ilman GPS:ää – Lapin tuntureilla, arktisessa maastossa ja satamien kaaoksessa. Liity pieneen tiimiin, joka toimittaa oikeaa autonomiaa Espoosta käsin.",
+                heroApply: "🚀 Aloita hakemus",
+                heroRoles: "↓ Näytä paikat",
+
+                // Open Positions
+                rolesTitle: "Avoimet tehtävät",
+                rolesSubtitle: "Aitoa insinöörityötä. Aitoja käyttöönottoja. Aitoja robotteja. Ei esityksiä – vain järjestelmiä, jotka toimivat säässä, maastossa ja paineessa.",
+                searchPlaceholder: "🔍 Hae roolin, taidon tai avainsanan perusteella",
+                filterAll: "Kaikki roolit",
+                filterAutonomy: "🤖 Autonomia",
+                filterSoftware: "💻 Ohjelmisto",
+                filterField: "🚁 Kenttätoiminta",
+                filterBusiness: "📊 Liiketoiminta",
+
+                // Photo Gallery
+                galleryTitle: "📸 Kentällä – oikeasti",
+                gallerySubtitle: "Oikeat robotit. Oikea maasto. Oikea työ. Ei kuvapankkeja.",
+                galleryNote: "📝 Vinkki: Korvaa paikkamerkit aidoilla kuvilla roboteista kentällä, tiimistä ja toimistosta.",
+
+                // Video Section
+                videoTitle: "🎥 Tapaa tiimi",
+                videoSubtitle: "2 minuutin esittely: mitä rakennamme ja miksi rekrytoimme.",
+                videoNote: "Klikkaa toista · tai upota Loom/YouTube-linkki",
+
+                // Testimonials
+                testimonialTitle: "💬 Mitä tiimi sanoo",
+                testimonialSubtitle: "Insinöörejä, jotka rakentavat INDE:llä oikeaa autonomiaa.",
+
+                // How We Hire
+                hireTitle: "📋 Rekruitointiprosessimme",
+                hireSubtitle: "Ei yllätyksiä, ei mustia aukkoja. Tässä mitä tapahtuu, kun haet.",
+                hireStep1: "Hae",
+                hireStep1Desc: "Lähetät hakemuksen ja CV:n. Käymme ne läpi henkilökohtaisesti kahden arkipäivän kuluessa.",
+                hireStep2: "Keskustelu",
+                hireStep2Desc: "Kevyt 30 min tutustuminen. Taustasi, motivaatiosi ja rooli pähkinänkuoressa.",
+                hireStep3: "Tekninen tehtävä",
+                hireStep3Desc: "Kotitehtävä (2–3 h) oikeasta ongelmasta. Suunnittelupainotteinen. Korvaamme ajastasi (€150–300).",
+                hireStep4: "Tapaaminen tiimin kanssa",
+                hireStep4Desc: "Käymme ratkaisusi läpi, kysymyksiä puolin ja toisin. Aito keskustelu, ei tentti.",
+                hireStep5: "Kenttäpäivä (valinnainen)",
+                hireStep5Desc: "Espoossa tai Lapissa – näet robotit työssä ja tapaat lisää tiimiläisiä. Me hoidamme matkakulut.",
+                hireStep6: "Tarjous",
+                hireStep6Desc: "Tarjous ja neuvottelu: palkka, osakkeet, aloituspäivä. Asiallisesti ja läpinäkyvästi.",
+
+                // FAQ
+                faqTitle: "❓ Usein kysyttyä",
+                faqSubtitle: "Kysymyksiä, joita kuulemme usein.",
+                faqQ1: "Tarjoatteko viisumitukea?",
+                faqA1: "Kyllä. Sponsoroimme viisumin ja autamme relokaation kanssa EU:n ulkopuolisille hakijoille.",
+                faqQ2: "Voinko työskennellä etänä?",
+                faqA2: "Pääosin toimistolta (Espoo). Kenttätestit vaativat läsnäoloa. Pohjoismaissa joustamme – muista aikavyöhykkeistä sovitaan erikseen.",
+                faqQ3: "Millä kielellä työskentelette?",
+                faqA3: "Työkieli on englanti (koodi, dokumentaatio, palaverit). Suomi on plussaa, ei vaatimus.",
+                faqQ4: "Kuinka nopeasti vastaatte?",
+                faqA4: "Kahdessa arkipäivässä. Jos et kuule meistä kolmen päivän kuluessa, tarkista roskaposti tai laita viestiä: careers@inde-robotics.com.",
+                faqQ5: "Onko harjoittelu- tai graduate-ohjelmia?",
+                faqA5: "Tällä hetkellä rekrytoimme pääosin täysiaikaisiin tehtäviin (turvallisuus ja vastuu). Poikkeuksia tehdään huippuosaajille.",
+
+                // Why Join
+                whyTitle: "Miksi INDE",
+                whySubtitle: "Prototyypeistä tuotantoon – oikeat käyttöönotot, joka päivä.",
+                why1Title: "🤖 Oikeat käyttöönotot",
+                why1: "Koodisi pyörii roboteilla Lapissa, arktisissa satamissa ja vaikeassa maastossa. Ei "Q4"-lupauksia – oikeaa metallia, oikeassa ympäristössä.",
+                why2Title: "🎯 Reilu tekemisen kulttuuri",
+                why2: "Ei teatteria eikä yliyrittämistä. Selkeät tavoitteet, järkevät työajat, suora palaute. Tehdään se, mikä vie eteenpäin.",
+                why3Title: "🚀 Autonomia – totta",
+                why3: "Omistat järjestelmäsi: suunnittelet arkkitehtuurin, päätät ja toimitat. Ei turhaa komiteatyötä.",
+                why4Title: "🧠 Kunnioitus vaikeille ongelmille",
+                why4: "GPS:tön navigointi, sensorifuusio ja reaaliaikainen robotiikka ovat vaikeita. Siksi annamme aikaa, resursseja ja tuen tehdä ne hyvin.",
+                why5Title: "🌍 Pohjoismainen perusta",
+                why5: "Espoo tarjoaa laadukkaan arjen: koulut, terveydenhuolto, vakaus ja luonto. Hyvä paikka elää ja rakentaa.",
+                why6Title: "🤝 Pieni, osaava tiimi",
+                why6: "Noin 12–15 hengen kehitystiimi. Jokainen vaikuttaa suoraan tuotteen suuntaan. Ei siiloja, ei turhaa politiikkaa.",
+
+                // Compensation
+                compTitle: "Palkkaus ja edut",
+                compIntro: "Maksamme kilpailukykyiset pohjoismaiset palkat. Vaikutus näkyy kompensaatiossa.",
+                compOfferTitle: "📊 Mitä tarjoamme",
+                compBase: "Peruspalkka",
+                compBaseValue: "Kilpailukykyinen",
+                compEquity: "Osakeomistus",
+                compEquityValue: "Kyllä",
+                compBenefits: "Edut",
+                compBenefitsValue: "Laajat",
+                compVisa: "Viisumi",
+                compVisaValue: "Sponsoroitu",
+                compNoteHow: "Miten palkka määritetään: kokemuksesi, rooli ja markkinataso. Käymme yksityiskohdat läpi ensimmäisessä keskustelussa – ei yllätyksiä.",
+                compPerks: "Lisäedut: tehokas kannettava valintasi mukaan · Jetson-laitteisto · AWS-krediitit · kuntosali · kielikurssi · kahvibudjetti · kotitoimistosetti · joustavat ajat (kenttätyö edellyttää läsnäoloa).",
+
+                // Form
+                formSuccess: "✓ Hakemus vastaanotettu!",
+                formSuccessMsg: "Kiitos hakemuksestasi INDE Roboticsille.",
+                formSuccessResponse: "Käymme jokaisen hakemuksen läpi henkilökohtaisesti ja palaamme asiaan kahden arkipäivän kuluessa.",
+
+                // Ready CTA
+                readyTitle: "Valmis rakentamaan oikeaa autonomiaa?",
+                readyDesc: "Täytä hakemuksesi alle (kestää 5 minuuttia). Käymme jokaisen hakemuksen läpi henkilökohtaisesti ja vastaamme kahden arkipäivän kuluessa.",
+                readyBtn: "🚀 Aloita hakemus"
+            }
+        };
+
+        let currentLanguage = localStorage.getItem('lang') || 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('lang', lang);
+            
+            // Update ALL translated elements
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (translations[lang] && translations[lang][key]) {
+                    const text = translations[lang][key];
+                    
+                    // If it's an input or textarea, set placeholder/value
+                    if (el.tagName === 'INPUT' && el.type === 'text') {
+                        el.placeholder = text;
+                    } else if (el.tagName === 'TEXTAREA') {
+                        el.placeholder = text;
+                    } else {
+                        // Otherwise set text content
+                        el.textContent = text;
+                    }
+                }
+            });
+            
+            // Update language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
+            
+            // Track in analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'language_changed', {language: lang});
+            }
+        }
+
+        // Language button listeners
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => setLanguage(btn.dataset.lang));
+        });
+
+        // Load saved language on load
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(currentLanguage);
+        });
+
+        // ===== SEARCH & FILTER =====
+        const searchInput = document.getElementById('searchInput');
+        const filterTags = document.querySelectorAll('.filter-tag');
+        let activeFilter = 'all';
+
+        // Role categorization
+        const roleCategories = {
+            'Autonomy Engineer': 'autonomy',
+            'Computer Vision / Perception Engineer': 'software',
+            'Software Systems Engineer': 'software',
+            'Swarm Robotics Engineer': 'autonomy',
+            'Field Operations Lead': 'field',
+            'Business Development Manager': 'business',
+            'Robotics Tools Operator': 'field'
+        };
+
+        function filterRoles() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const roleCards = document.querySelectorAll('.role-card');
+
+            roleCards.forEach(card => {
+                const roleName = card.querySelector('.role-title')?.textContent || '';
+                const roleText = card.textContent.toLowerCase();
+                const category = roleCategories[roleName];
+
+                const matchesSearch = searchTerm === '' || roleText.includes(searchTerm);
+                const matchesFilter = activeFilter === 'all' || category === activeFilter;
+
+                if (matchesSearch && matchesFilter) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Search listener
+        if (searchInput) {
+            searchInput.addEventListener('input', filterRoles);
+        }
+
+        // Filter tag listeners
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', function() {
+                filterTags.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                activeFilter = this.dataset.category;
+                filterRoles();
+            });
+        });
+
+        // ===== STICKY MOBILE BUTTON =====
+        const stickyCTA = document.getElementById('stickyCTA');
+        const rolesSection = document.getElementById('roles');
+
+        function toggleStickyCTA() {
+            if (window.innerWidth <= 768) {
+                const rolesTop = rolesSection?.offsetTop || 0;
+                const rolesBoundary = rolesTop + 200;
+                
+                if (window.scrollY > rolesBoundary) {
+                    stickyCTA.classList.add('visible');
+                } else {
+                    stickyCTA.classList.remove('visible');
+                }
+            } else {
+                stickyCTA.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', toggleStickyCTA);
+        window.addEventListener('resize', toggleStickyCTA);
+
+        // ===== FAQ TOGGLE =====
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            if (question) {
+                question.addEventListener('click', function() {
+                    item.classList.toggle('open');
+                });
+            }
+        });
+
+        // ===== HASH-BASED JOB URLs =====
+        function handleJobHash() {
+            const hash = window.location.hash.slice(1);
+            if (hash.startsWith('job-')) {
+                // Extract job ID and find corresponding role
+                const jobId = hash.replace('job-', '').replace(/-/g, ' ');
+                const roleSelect = document.getElementById('applicant-role');
+                if (roleSelect) {
+                    // Find matching option
+                    for (let option of roleSelect.options) {
+                        if (option.value.toLowerCase().includes(jobId.toLowerCase())) {
+                            roleSelect.value = option.value;
+                            openApplicationModal();
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleJobHash);
+        document.addEventListener('DOMContentLoaded', handleJobHash);
+
+        // ===== EXISTING CODE =====
+        function toggleRole(card) {
+            card.classList.toggle('collapsed');
+            const btn = card.querySelector('.role-toggle-btn');
+            btn.classList.toggle('expanded');
+        }
+
+        function applyForRole(event, roleName) {
+            event.stopPropagation();
+            openApplicationModal();
+            // Pre-fill the role selection
+            setTimeout(() => {
+                const roleSelect = document.getElementById('applicant-role');
+                if (roleSelect) {
+                    roleSelect.value = roleName;
+                }
+            }, 100);
+        }
+
+        function openApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeApplicationModal() {
+            const modal = document.getElementById('applicationModal');
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+                const form = modal.querySelector('form');
+                if (form) {
+                    form.reset();
+                    const success = modal.querySelector('.form-success');
+                    if (success) {
+                        success.style.display = 'none';
+                        form.style.display = 'block';
+                    }
+                }
+            }
+        }
+
+        // Close modal on outside click
+        document.addEventListener('click', (e) => {
+            if (e.target.id === 'applicationModal') {
+                closeApplicationModal();
+            }
+        });
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeApplicationModal();
+            }
+        });
+
+        // ===== PDF & EMAIL FUNCTIONS =====
+        function saveJobAsPDF(jobTitle) {
+            // Create a simple text content for PDF
+            const jobContent = `
+INDE ROBOTICS - JOB OPPORTUNITY
+
+Position: ${jobTitle}
+
+For full details and to apply, visit:
+https://inde-robotics.com/careers#job-${jobTitle.toLowerCase().replace(/\s+/g, '-')}
+
+Location: Espoo, Finland
+Type: Full-time
+
+Learn more about INDE Robotics:
+https://inde-robotics.com
+
+Apply now: https://inde-robotics.com/careers
+            `.trim();
+
+            // Create a Blob with the content
+            const blob = new Blob([jobContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `INDE_${jobTitle.replace(/\s+/g, '_')}.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+            
+            // Track in analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'job_saved_pdf', {job_title: jobTitle});
+            }
+        }
+
+        function shareJobViaEmail(jobTitle) {
+            const jobUrl = `https://inde-robotics.com/careers#job-${jobTitle.toLowerCase().replace(/\s+/g, '-')}`;
+            const subject = `Check out this job at INDE: ${jobTitle}`;
+            const body = `
+Hi!
+
+I found this interesting robotics job that I thought you might like:
+
+Position: ${jobTitle}
+Company: INDE Robotics (Espoo, Finland)
+
+Learn more and apply:
+${jobUrl}
+
+INDE is building autonomous systems that work in the real world. No simulation - real robots, real terrain.
+
+Check it out!
+            `.trim();
+
+            const mailtoLink = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+            
+            // Track in analytics
+            if (typeof gtag === 'function') {
+                gtag('event', 'job_shared_email', {job_title: jobTitle});
+            }
+        }
+
+        // Form submission
+        const applicationForm = document.getElementById('applicationForm');
+        if (applicationForm) {
+            applicationForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(e.target);
+                
+                // Show loading state
+                const submitBtn = e.target.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = '⏳ Sending...';
+                
+                try {
+                    // Send to Getform
+                    const response = await fetch('https://getform.io/f/byverkka', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        // Show success message
+                        e.target.style.display = 'none';
+                        document.getElementById('applicationSuccess').style.display = 'block';
+                        
+                        // Close after 5 seconds
+                        setTimeout(() => {
+                            closeApplicationModal();
+                        }, 5000);
+                    } else {
+                        throw new Error('Failed to submit application');
+                    }
+                } catch (error) {
+                    console.error('Error submitting application:', error);
+                    alert('⚠️ There was an issue submitting your application.\n\nPlease email us directly:\ncareers@inde-robotics.com\n\nWe reply to every application within 2 business days.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        }
+
+        // ===== FLOATING SIDEBAR FUNCTIONALITY =====
+        const jobsSidebar = document.getElementById('jobsSidebar');
+        const jobsList = document.getElementById('jobsList');
+        const sidebarToggleBtn = document.getElementById('sidebarToggleBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        const jobDetailsPanel = document.getElementById('jobDetailsPanel');
+        const jobDetailsContent = document.getElementById('jobDetailsContent');
+        const jobsCount = document.getElementById('jobsCount');
+
+        // Extract jobs from role-cards
+        function extractJobsFromPage() {
+            const jobs = [];
+            const roleCards = document.querySelectorAll('.role-card');
+            
+            roleCards.forEach((card, index) => {
+                const title = card.querySelector('.role-title')?.textContent?.trim() || '';
+                const tags = Array.from(card.querySelectorAll('.role-meta-tag')).map(t => t.textContent?.trim());
+                const story = card.querySelector('.role-story')?.textContent?.trim() || '';
+                const whatYouDo = card.querySelector('.role-what-you-do ul')?.innerHTML || '';
+                const youBring = card.querySelector('.role-you-bring')?.textContent?.trim() || '';
+                
+                if (title) {
+                    jobs.push({
+                        id: index + 1,
+                        title: title,
+                        tags: tags,
+                        story: story,
+                        whatYouDo: whatYouDo,
+                        youBring: youBring,
+                        card: card
+                    });
+                }
+            });
+            
+            return jobs;
+        }
+
+        // Render jobs in sidebar
+        function renderJobsInSidebar() {
+            const jobs = extractJobsFromPage();
+            jobsList.innerHTML = '';
+            jobsCount.textContent = jobs.length;
+
+            jobs.forEach(job => {
+                const jobItem = document.createElement('div');
+                jobItem.className = 'job-item';
+                jobItem.innerHTML = `
+                    <div class="job-item-title">${job.title}</div>
+                    <div class="job-item-meta">
+                        ${job.tags.map(tag => `<span class="job-item-tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+                jobItem.addEventListener('click', () => openJobDetails(job));
+                jobsList.appendChild(jobItem);
+            });
+        }
+
+        // Open job details in modal
+        function openJobDetails(job) {
+            jobDetailsContent.innerHTML = `
+                <button class="close-detail-btn" id="closeDetailsBtn">×</button>
+                <div class="job-details-header">
+                    <div class="job-details-title">${job.title}</div>
+                </div>
+                <div class="job-details-meta">
+                    ${job.tags.map(tag => `
+                        <div class="job-details-meta-item">
+                            <div class="job-details-meta-label">${tag}</div>
+                        </div>
+                    `).join('')}
+                </div>
+                <div class="job-details-section">
+                    <h3>About This Role</h3>
+                    <p>${job.story}</p>
+                </div>
+                <div class="job-details-section">
+                    <h3>What You'll Do</h3>
+                    <ul>${job.whatYouDo}</ul>
+                </div>
+                <div class="job-details-section">
+                    <h3>You Bring</h3>
+                    <p>${job.youBring}</p>
+                </div>
+                <button class="btn" style="width: 100%; margin-top: 1.5rem;" onclick="applyForRole(event, '${job.title}')">
+                    🚀 Apply Now
+                </button>
+            `;
+            
+            document.getElementById('closeDetailsBtn').addEventListener('click', closeJobDetails);
+            jobDetailsPanel.classList.add('active');
+        }
+
+        // Close job details
+        function closeJobDetails() {
+            jobDetailsPanel.classList.remove('active');
+        }
+
+        // Toggle sidebar
+        function toggleSidebar() {
+            jobsSidebar.classList.toggle('collapsed');
+            
+            if (!jobsSidebar.classList.contains('collapsed')) {
+                sidebarToggleBtn.classList.remove('show');
+            }
+        }
+
+        // Event listeners for sidebar
+        sidebarToggleBtn.addEventListener('click', toggleSidebar);
+        closeSidebarBtn.addEventListener('click', () => {
+            jobsSidebar.classList.add('collapsed');
+            sidebarToggleBtn.classList.add('show');
+        });
+
+        jobDetailsPanel.addEventListener('click', (e) => {
+            if (e.target === jobDetailsPanel) {
+                closeJobDetails();
+            }
+        });
+
+        // Initialize sidebar
+        window.addEventListener('load', () => {
+            renderJobsInSidebar();
+            sidebarToggleBtn.classList.add('show');
+            
+            // Show sidebar by default on desktop
+            if (window.innerWidth > 768) {
+                toggleSidebar();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                if (jobsSidebar.classList.contains('collapsed')) {
+                    sidebarToggleBtn.classList.remove('show');
+                }
+            } else {
+                if (!jobsSidebar.classList.contains('collapsed')) {
+                    sidebarToggleBtn.classList.add('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
