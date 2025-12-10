@@ -599,7 +599,7 @@
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <a href="index-fi.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
                     <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="40" height="40" rx="8" fill="#FF8856"/>
                         <line x1="12" y1="11" x2="12" y2="29" stroke="white" stroke-width="3" stroke-linecap="round"/>
@@ -798,42 +798,76 @@
             <p>
                 Send us your resume, portfolio, or just a note about why you want to join INDE. We read everything.
             </p>
-            <a href="mailto:careers@inde-robotics.com" class="btn">Send Your Application</a>
+            <a href="/cdn-cgi/l/email-protection#bad9dbc8dfdfc8c9fad3d4dedf97c8d5d8d5ced3d9c994d9d5d7" class="btn">Send Your Application</a>
             <a href="index.html" class="btn" style="background: rgba(255, 255, 255, 0.1); border: 2px solid var(--ginger);">Learn More About INDE</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-columns">
+    <footer id="company">
+        <div class="footer-container">
+            <div class="footer-grid">
                 <div class="footer-column">
-                    <h4>INDE</h4>
+                    <div class="footer-logo">
+                        <img src="inde-logo.png" alt="INDE" title="Defense-grade autonomy">
+                    </div>
+                    <p class="footer-tagline">Defense-grade autonomy • Dual-use by design • Vendor-agnostic</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Alusta</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="join-us.html">Careers</a></li>
+                        <li><a href="index.html#stack">Havainto Engine <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#stack">Decision Core <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#stack">Ohjaus Bridge <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#stack">Ops Console <span class="coming-soon">Soon</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Ratkaisut</h4>
+                    <ul>
+                        <li><a href="index.html#solutions">Ground Robotics</a></li>
+                        <li><a href="index.html#solutions">Aerial Systems</a></li>
+                        <li><a href="index.html#solutions">Merikäyttöiset Operaatiot</a></li>
+                        <li><a href="index.html#solutions">Industrial</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">FAQ</a></li>
+                        <li><a href="index.html#platform">Dokumentaatio <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#platform">API Viite <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#field-stories">Field Stories <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="index.html#company">Blogi <span class="coming-soon">Soon</span></a></li>
+                        <li><a href="about-fi.html">Tietoa</a></li>
+                <li><a href="join-us-fi.html">Urataivous</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
+                <div class="footer-column footer-newsletter">
+                    <h4>Pysy Tietoinen</h4>
+                    <form id="newsletterForm" class="newsletter-form">
+                        <input type="email" id="newsletter-email" name="email" placeholder="sinun@sahkoposti.fi" required>
+                        <button type="submit" class="newsletter-btn">Tilaa</button>
+                    </form>
+                    <p class="newsletter-note">Vähäisen melun päivitykset. Missio markkinoinnin yli.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>© 2025 INDE Robotics — Autonomy for the Real World</p>
+                <p style="margin-bottom: 0.5rem;">
+                    <strong>INDE Robotics</strong> — Espoo, Helsinki, Suomi  
+                    <br>
+                    <em>Autonomian Käyttöjärjestelmä puolustukseen ja kansalaisturvallisuuteen</em>
+                </p>
+                <p>© 2025 INDE Robotics — Autonomia todelliselle maailmalle</p>
+                <p style="margin-top: 1.5rem; font-size: 0.85rem; line-height: 1.8; color: rgba(255, 255, 255, 0.5);">
+                    <strong style="color: rgba(255, 255, 255, 0.7);">Tekniikan Kumppanit:</strong> 
+                    Rakennettu <strong>NVIDIA</strong> laskenta-infrastruktuuri ja <strong>AWS</strong> pilvipalvelu.
+                    <br><br>
+                    <strong style="color: rgba(255, 255, 255, 0.7);">Vientisäätely & Vaatimukseltenhmukainen:</strong> 
+                    INDE develops dual-use autonomous systems software designed for both defense and civil security applications, 
+                    compliant with EU export control regulations (428/2009). All operational deployments maintain human oversight 
+                    in accordance with responsible AI principles. For export inquiries and compliance documentation, please 
+                    <a href="/cdn-cgi/l/email-protection#5a3935342e3b392e1a33343e3f77283538352e33392974393537" style="color: var(--ginger); text-decoration: none;">ota yhteyttä tiimiin</a>.
+                </p>
             </div>
         </div>
     </footer>
@@ -872,7 +906,7 @@
     </div>
 
     <!-- Job Details Modal Data & Scripts -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Job data with full details
         const jobsData = {
             "Autonomy Engineer": {
@@ -1116,11 +1150,3 @@
 
             // Close modal on ESC key
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape') {
-                    closeJobModal();
-                }
-            });
-        });
-    </script>
-</body>
-</html>
