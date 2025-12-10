@@ -808,75 +808,42 @@
             <p>
                 Send us your resume, portfolio, or just a note about why you want to join INDE. We read everything.
             </p>
-            <a href="/cdn-cgi/l/email-protection#95f6f4e7f0f0e7e6d5fcfbf1f0b8e7faf7fae1fcf6e6bbf6faf8" class="btn">Send Your Application</a>
+            <a href="mailto:careers@inde-robotics.com" class="btn">Send Your Application</a>
             <a href="index.html" class="btn" style="background: rgba(255, 255, 255, 0.1); border: 2px solid var(--ginger);">Learn More About INDE</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="company">
-        <div class="footer-container">
-            <div class="footer-grid">
+    <footer>
+        <div class="footer-content">
+            <div class="footer-columns">
                 <div class="footer-column">
-                    <div class="footer-logo">
-                        <img src="inde-logo.png" alt="INDE" title="Defense-grade autonomy">
-                    </div>
-                    <p class="footer-tagline">Defense-grade autonomy • Dual-use by design • Vendor-agnostic</p>
-                </div>
-                <div class="footer-column">
-                    <h4>Platform</h4>
+                    <h4>INDE</h4>
                     <ul>
-                        <li><a href="index.html#stack">Perception Engine <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#stack">Decision Core <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#stack">Control Bridge <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#stack">Ops Console <span class="coming-soon">Soon</span></a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Solutions</h4>
-                    <ul>
-                        <li><a href="index.html#solutions">Ground Robotics</a></li>
-                        <li><a href="index.html#solutions">Aerial Systems</a></li>
-                        <li><a href="index.html#solutions">Maritime Operations</a></li>
-                        <li><a href="index.html#solutions">Industrial</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="join-us.html">Careers</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="index.html#platform">Documentation <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#platform">API Reference <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#field-stories">Field Stories <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="index.html#company">Blog <span class="coming-soon">Soon</span></a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
-                <div class="footer-column footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <form id="newsletterForm" class="newsletter-form">
-                        <input type="email" id="newsletter-email" name="email" placeholder="your@email.com" required>
-                        <button type="submit" class="newsletter-btn">Subscribe</button>
-                    </form>
-                    <p class="newsletter-note">Low-noise updates. Mission over marketing.</p>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p style="margin-bottom: 0.5rem;">
-                    <strong>INDE Robotics</strong> — Espoo, Helsinki, Finland  
-                    <br>
-                    <em>Autonomy OS for Defense & Civil Security</em>
-                </p>
                 <p>© 2025 INDE Robotics — Autonomy for the Real World</p>
-                <p style="margin-top: 1.5rem; font-size: 0.85rem; line-height: 1.8; color: rgba(255, 255, 255, 0.5);">
-                    <strong style="color: rgba(255, 255, 255, 0.7);">Technology Partners:</strong> 
-                    Built on <strong>NVIDIA</strong> compute infrastructure and <strong>AWS</strong> cloud platform.
-                    <br><br>
-                    <strong style="color: rgba(255, 255, 255, 0.7);">Export Control & Compliance:</strong> 
-                    INDE develops dual-use autonomous systems software designed for both defense and civil security applications, 
-                    compliant with EU export control regulations (428/2009). All operational deployments maintain human oversight 
-                    in accordance with responsible AI principles. For export inquiries and compliance documentation, please 
-                    <a href="/cdn-cgi/l/email-protection#c4a7abaab0a5a7b084adaaa0a1e9b6aba6abb0ada7b7eaa7aba9" style="color: var(--ginger); text-decoration: none;">contact our team</a>.
-                </p>
             </div>
         </div>
     </footer>
@@ -915,7 +882,7 @@
     </div>
 
     <!-- Job Details Modal Data & Scripts -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Job data with full details
         const jobsData = {
             "Autonomy Engineer": {
@@ -1159,3 +1126,11 @@
 
             // Close modal on ESC key
             document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeJobModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
