@@ -2287,19 +2287,18 @@
             });
         });
 
-// Language Switcher - just navigate to the Finnish or English page
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const lang = btn.dataset.lang;
-        if (lang === 'fi') {
-            window.location.href = 'index-fi.html';
-        } else {
-            window.location.href = 'index.html';
-        }
-    });
-});
-
+        // Language Switcher - Navigate to language version
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const lang = btn.dataset.lang;
+                if (lang === 'fi') {
+                    window.location.href = 'index-fi.html';
+                } else {
+                    window.location.href = 'index.html';
+                }
+            });
+        });
 
         // Easter egg - Konami code
         let konamiCode = [];
