@@ -2287,25 +2287,19 @@
             });
         });
 
-        // Language Switcher
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                const lang = btn.dataset.lang;
-                
-                // Update active state
-                document.querySelectorAll('.lang-btn').forEach(b => {
-                    b.classList.remove('active');
-                });
-                btn.classList.add('active');
-                
-                // Store preference
-                localStorage.setItem('preferred-language', lang);
-                
-                // Show alert (in real implementation, would load different language)
-                alert(`Language switched to ${lang.toUpperCase()}. Full translation coming soon! 🚀`);
-            });
-        });
+// Language Switcher - just navigate to the Finnish or English page
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const lang = btn.dataset.lang;
+        if (lang === 'fi') {
+            window.location.href = 'index-fi.html';
+        } else {
+            window.location.href = 'index.html';
+        }
+    });
+});
+
 
         // Easter egg - Konami code
         let konamiCode = [];
